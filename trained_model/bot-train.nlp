@@ -1,0 +1,2051 @@
+{
+  "settings": {
+    "languages": [
+      "zh"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "zh"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "zh": {
+        "settings": {
+          "locale": "zh",
+          "trainByDomain": false,
+          "tag": "domain-manager-zh",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "%hi%": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          },
+          "%hi%%hi%": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          },
+          "%hi%%none%": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          },
+          "%hi%%hi%%none%": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          },
+          "%intro%,ji3,zi4": {
+            "intent": "greeting.intro",
+            "domain": "default"
+          },
+          "gong1,neng2": {
+            "intent": "greeting.intro",
+            "domain": "default"
+          },
+          "%intro%": {
+            "intent": "greeting.intro",
+            "domain": "default"
+          },
+          "%intro%,me5,shen2,you3": {
+            "intent": "greeting.intro",
+            "domain": "default"
+          },
+          "fa3,fang1,jie3,jue2": {
+            "intent": "greeting.question",
+            "domain": "default"
+          },
+          "ban4,me5,zen3": {
+            "intent": "greeting.question",
+            "domain": "default"
+          },
+          "gai3,shan4": {
+            "intent": "greeting.question",
+            "domain": "default"
+          },
+          "fang2,he2,jin4,ru2,shi4,yu4": {
+            "intent": "eye.prevention",
+            "domain": "default"
+          },
+          "fang2,he2,jia1,jin4,ru2,shen1,shi4,yu4": {
+            "intent": "eye.prevention",
+            "domain": "default"
+          },
+          "fang2,jin4,shi4,yu4": {
+            "intent": "eye.prevention",
+            "domain": "default"
+          },
+          "fang2,jia1,jin4,shen1,shi4,yu4": {
+            "intent": "eye.prevention",
+            "domain": "default"
+          },
+          "%eye%,%symptom%,ban4,gai1,lao3,me5,shi5,zen3": {
+            "intent": "eye.reply1.ans1",
+            "domain": "default"
+          },
+          "%eye%%symptom%": {
+            "intent": "eye.reply1.ans1",
+            "domain": "default"
+          },
+          "%eye%,%symptom%,de5,hen3,jue2,me5,shen2,wei4": {
+            "intent": "eye.reply1.ans2",
+            "domain": "default"
+          },
+          "%eye%,%symptom%,hao3,hao4": {
+            "intent": "eye.reply1.ans2",
+            "domain": "default"
+          },
+          "%eye%,%symptom%,hen3": {
+            "intent": "eye.reply1.ans2",
+            "domain": "default"
+          },
+          "%eye%%symptom%,gai1,huan3,jin4,me5,shu1,zen3,zui4": {
+            "intent": "eye.reply1.ans3",
+            "domain": "default"
+          },
+          "%eye%%symptom%,gai1,jie3,jue2,me5,zen3": {
+            "intent": "eye.reply1.ans4",
+            "domain": "default"
+          },
+          "%eye%%symptom%,jie3,jue2": {
+            "intent": "eye.reply1.ans4",
+            "domain": "default"
+          },
+          "%eye%%symptom%,fa3,fang1,jie3,jue2": {
+            "intent": "eye.reply1.ans4",
+            "domain": "default"
+          },
+          "%eye%,%symptom%,ban4,hao3,hao4,me5,zen3": {
+            "intent": "eye.reply1.ans4",
+            "domain": "default"
+          },
+          "%eye%%symptom%,gai3,me5,shan4,zen3": {
+            "intent": "eye.reply1.ans5",
+            "domain": "default"
+          },
+          "%eye%%symptom%,gai3,shan4": {
+            "intent": "eye.reply1.ans5",
+            "domain": "default"
+          },
+          "%eye%%symptom%,gai3,he2,ru2,shan4,yao1,yao4": {
+            "intent": "eye.reply1.ans5",
+            "domain": "default"
+          },
+          "%eye%%symptom%,gong1,jie3,jue2,lei4,ren2,ye4": {
+            "intent": "eye.reply1.ans6",
+            "domain": "default"
+          },
+          "%eye%%symptom%,gong1,lei4,ren2,ye4,yong4,you3": {
+            "intent": "eye.reply1.ans6",
+            "domain": "default"
+          },
+          "%eye%,%serious%,hao3,hao4": {
+            "intent": "eye.reply2.ans1",
+            "domain": "default"
+          },
+          "%eye%%serious%": {
+            "intent": "eye.reply2.ans1",
+            "domain": "default"
+          },
+          "%eye%%serious%,ban4,me5,zen3": {
+            "intent": "eye.reply2.ans1",
+            "domain": "default"
+          },
+          "%eye%,%serious%,chang2,fei1": {
+            "intent": "eye.reply2.ans2",
+            "domain": "default"
+          },
+          "%eye%,%serious%,e2,hao3,hao4,o2,o4,o5,wo3": {
+            "intent": "eye.reply2.ans2",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greeting.hello": "default",
+          "greeting.intro": "default",
+          "greeting.question": "default",
+          "eye.prevention": "default",
+          "eye.reply1.ans1": "default",
+          "eye.reply1.ans2": "default",
+          "eye.reply1.ans3": "default",
+          "eye.reply1.ans4": "default",
+          "eye.reply1.ans5": "default",
+          "eye.reply1.ans6": "default",
+          "eye.reply2.ans1": "default",
+          "eye.reply2.ans2": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "%hi%",
+            "intent": "greeting.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "%hi%%hi%",
+            "intent": "greeting.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "%hi%%none%",
+            "intent": "greeting.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "%hi%%hi%%none%",
+            "intent": "greeting.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "%intro%自己",
+            "intent": "greeting.intro"
+          },
+          {
+            "domain": "default",
+            "utterance": "功能",
+            "intent": "greeting.intro"
+          },
+          {
+            "domain": "default",
+            "utterance": "%intro%",
+            "intent": "greeting.intro"
+          },
+          {
+            "domain": "default",
+            "utterance": "有什麼%intro%",
+            "intent": "greeting.intro"
+          },
+          {
+            "domain": "default",
+            "utterance": "解決方法",
+            "intent": "greeting.question"
+          },
+          {
+            "domain": "default",
+            "utterance": "怎麼辦",
+            "intent": "greeting.question"
+          },
+          {
+            "domain": "default",
+            "utterance": "改善",
+            "intent": "greeting.question"
+          },
+          {
+            "domain": "default",
+            "utterance": "如何預防近視",
+            "intent": "eye.prevention"
+          },
+          {
+            "domain": "default",
+            "utterance": "如何預防近視加深",
+            "intent": "eye.prevention"
+          },
+          {
+            "domain": "default",
+            "utterance": "預防近視",
+            "intent": "eye.prevention"
+          },
+          {
+            "domain": "default",
+            "utterance": "預防近視加深",
+            "intent": "eye.prevention"
+          },
+          {
+            "domain": "default",
+            "utterance": "如何預防加深近視",
+            "intent": "eye.prevention"
+          },
+          {
+            "domain": "default",
+            "utterance": "預防加深近視",
+            "intent": "eye.prevention"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%老是%symptom%該怎麼辦",
+            "intent": "eye.reply1.ans1"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%symptom%",
+            "intent": "eye.reply1.ans1"
+          },
+          {
+            "domain": "default",
+            "utterance": "為什麼覺得%eye%很%symptom%",
+            "intent": "eye.reply1.ans2"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%好%symptom%",
+            "intent": "eye.reply1.ans2"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%很%symptom%",
+            "intent": "eye.reply1.ans2"
+          },
+          {
+            "domain": "default",
+            "utterance": "最近%eye%%symptom%該怎麼舒緩",
+            "intent": "eye.reply1.ans3"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%symptom%該怎麼解決",
+            "intent": "eye.reply1.ans4"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%symptom%解決",
+            "intent": "eye.reply1.ans4"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%symptom%解決方法",
+            "intent": "eye.reply1.ans4"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%好%symptom%怎麼辦",
+            "intent": "eye.reply1.ans4"
+          },
+          {
+            "domain": "default",
+            "utterance": "解決%eye%%symptom%",
+            "intent": "eye.reply1.ans4"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%symptom%怎麼改善",
+            "intent": "eye.reply1.ans5"
+          },
+          {
+            "domain": "default",
+            "utterance": "改善%eye%%symptom%",
+            "intent": "eye.reply1.ans5"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%symptom%要如何改善",
+            "intent": "eye.reply1.ans5"
+          },
+          {
+            "domain": "default",
+            "utterance": "人工淚液解決%eye%%symptom%",
+            "intent": "eye.reply1.ans6"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%symptom%人工淚液有用",
+            "intent": "eye.reply1.ans6"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%好%serious%",
+            "intent": "eye.reply2.ans1"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%serious%",
+            "intent": "eye.reply2.ans1"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%%serious%怎麼辦",
+            "intent": "eye.reply2.ans1"
+          },
+          {
+            "domain": "default",
+            "utterance": "%eye%非常%serious%",
+            "intent": "eye.reply2.ans2"
+          },
+          {
+            "domain": "default",
+            "utterance": "好%serious%哦我的%eye%",
+            "intent": "eye.reply2.ans2"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "zh",
+              "tag": "nlu-zh",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "%hi%": 1,
+              "%hi%%hi%": 1,
+              "%hi%%none%": 1,
+              "%hi%%hi%%none%": 1,
+              "%intro%": 1,
+              "zi4": 1,
+              "ji3": 1,
+              "gong1": 1,
+              "neng2": 1,
+              "you3": 1,
+              "shen2": 1,
+              "me5": 1,
+              "jie3": 1,
+              "jue2": 1,
+              "fang1": 1,
+              "fa3": 1,
+              "zen3": 1,
+              "ban4": 1,
+              "gai3": 1,
+              "shan4": 1,
+              "ru2": 1,
+              "he2": 1,
+              "yu4": 1,
+              "fang2": 1,
+              "jin4": 1,
+              "shi4": 1,
+              "jia1": 1,
+              "shen1": 1,
+              "%eye%": 1,
+              "lao3": 1,
+              "shi5": 1,
+              "%symptom%": 1,
+              "gai1": 1,
+              "%eye%%symptom%": 1,
+              "wei4": 1,
+              "de5": 1,
+              "hen3": 1,
+              "hao3": 1,
+              "hao4": 1,
+              "zui4": 1,
+              "shu1": 1,
+              "huan3": 1,
+              "yao1": 1,
+              "yao4": 1,
+              "ren2": 1,
+              "lei4": 1,
+              "ye4": 1,
+              "yong4": 1,
+              "%serious%": 1,
+              "%eye%%serious%": 1,
+              "fei1": 1,
+              "chang2": 1,
+              "e2": 1,
+              "o2": 1,
+              "o4": 1,
+              "o5": 1,
+              "wo3": 1
+            },
+            "intents": {
+              "greeting.hello": 1,
+              "greeting.intro": 1,
+              "greeting.question": 1,
+              "eye.prevention": 1,
+              "eye.reply1.ans1": 1,
+              "eye.reply1.ans2": 1,
+              "eye.reply1.ans3": 1,
+              "eye.reply1.ans4": 1,
+              "eye.reply1.ans5": 1,
+              "eye.reply1.ans6": 1,
+              "eye.reply2.ans1": 1,
+              "eye.reply2.ans2": 1
+            },
+            "intentFeatures": {
+              "greeting.hello": {
+                "%hi%": 1,
+                "%hi%%hi%": 1,
+                "%hi%%none%": 1,
+                "%hi%%hi%%none%": 1
+              },
+              "greeting.intro": {
+                "%intro%": 1,
+                "zi4": 1,
+                "ji3": 1,
+                "gong1": 1,
+                "neng2": 1,
+                "you3": 1,
+                "shen2": 1,
+                "me5": 1
+              },
+              "greeting.question": {
+                "jie3": 1,
+                "jue2": 1,
+                "fang1": 1,
+                "fa3": 1,
+                "zen3": 1,
+                "me5": 1,
+                "ban4": 1,
+                "gai3": 1,
+                "shan4": 1
+              },
+              "eye.prevention": {
+                "ru2": 1,
+                "he2": 1,
+                "yu4": 1,
+                "fang2": 1,
+                "jin4": 1,
+                "shi4": 1,
+                "jia1": 1,
+                "shen1": 1
+              },
+              "eye.reply1.ans1": {
+                "%eye%": 1,
+                "lao3": 1,
+                "shi5": 1,
+                "%symptom%": 1,
+                "gai1": 1,
+                "zen3": 1,
+                "me5": 1,
+                "ban4": 1,
+                "%eye%%symptom%": 1
+              },
+              "eye.reply1.ans2": {
+                "wei4": 1,
+                "shen2": 1,
+                "me5": 1,
+                "jue2": 1,
+                "de5": 1,
+                "%eye%": 1,
+                "hen3": 1,
+                "%symptom%": 1,
+                "hao3": 1,
+                "hao4": 1
+              },
+              "eye.reply1.ans3": {
+                "zui4": 1,
+                "jin4": 1,
+                "%eye%%symptom%": 1,
+                "gai1": 1,
+                "zen3": 1,
+                "me5": 1,
+                "shu1": 1,
+                "huan3": 1
+              },
+              "eye.reply1.ans4": {
+                "%eye%%symptom%": 1,
+                "gai1": 1,
+                "zen3": 1,
+                "me5": 1,
+                "jie3": 1,
+                "jue2": 1,
+                "fang1": 1,
+                "fa3": 1,
+                "%eye%": 1,
+                "hao3": 1,
+                "hao4": 1,
+                "%symptom%": 1,
+                "ban4": 1
+              },
+              "eye.reply1.ans5": {
+                "%eye%%symptom%": 1,
+                "zen3": 1,
+                "me5": 1,
+                "gai3": 1,
+                "shan4": 1,
+                "yao1": 1,
+                "yao4": 1,
+                "ru2": 1,
+                "he2": 1
+              },
+              "eye.reply1.ans6": {
+                "ren2": 1,
+                "gong1": 1,
+                "lei4": 1,
+                "ye4": 1,
+                "jie3": 1,
+                "jue2": 1,
+                "%eye%%symptom%": 1,
+                "you3": 1,
+                "yong4": 1
+              },
+              "eye.reply2.ans1": {
+                "%eye%": 1,
+                "hao3": 1,
+                "hao4": 1,
+                "%serious%": 1,
+                "%eye%%serious%": 1,
+                "zen3": 1,
+                "me5": 1,
+                "ban4": 1
+              },
+              "eye.reply2.ans2": {
+                "%eye%": 1,
+                "fei1": 1,
+                "chang2": 1,
+                "%serious%": 1,
+                "hao3": 1,
+                "hao4": 1,
+                "e2": 1,
+                "o2": 1,
+                "o4": 1,
+                "o5": 1,
+                "wo3": 1
+              }
+            },
+            "featuresToIntent": {
+              "%hi%": [
+                "greeting.hello"
+              ],
+              "%hi%%hi%": [
+                "greeting.hello"
+              ],
+              "%hi%%none%": [
+                "greeting.hello"
+              ],
+              "%hi%%hi%%none%": [
+                "greeting.hello"
+              ],
+              "%intro%": [
+                "greeting.intro"
+              ],
+              "zi4": [
+                "greeting.intro"
+              ],
+              "ji3": [
+                "greeting.intro"
+              ],
+              "gong1": [
+                "greeting.intro",
+                "eye.reply1.ans6"
+              ],
+              "neng2": [
+                "greeting.intro"
+              ],
+              "you3": [
+                "greeting.intro",
+                "eye.reply1.ans6"
+              ],
+              "shen2": [
+                "greeting.intro",
+                "eye.reply1.ans2"
+              ],
+              "me5": [
+                "greeting.intro",
+                "greeting.question",
+                "eye.reply1.ans1",
+                "eye.reply1.ans2",
+                "eye.reply1.ans3",
+                "eye.reply1.ans4",
+                "eye.reply1.ans5",
+                "eye.reply2.ans1"
+              ],
+              "jie3": [
+                "greeting.question",
+                "eye.reply1.ans4",
+                "eye.reply1.ans6"
+              ],
+              "jue2": [
+                "greeting.question",
+                "eye.reply1.ans2",
+                "eye.reply1.ans4",
+                "eye.reply1.ans6"
+              ],
+              "fang1": [
+                "greeting.question",
+                "eye.reply1.ans4"
+              ],
+              "fa3": [
+                "greeting.question",
+                "eye.reply1.ans4"
+              ],
+              "zen3": [
+                "greeting.question",
+                "eye.reply1.ans1",
+                "eye.reply1.ans3",
+                "eye.reply1.ans4",
+                "eye.reply1.ans5",
+                "eye.reply2.ans1"
+              ],
+              "ban4": [
+                "greeting.question",
+                "eye.reply1.ans1",
+                "eye.reply1.ans4",
+                "eye.reply2.ans1"
+              ],
+              "gai3": [
+                "greeting.question",
+                "eye.reply1.ans5"
+              ],
+              "shan4": [
+                "greeting.question",
+                "eye.reply1.ans5"
+              ],
+              "ru2": [
+                "eye.prevention",
+                "eye.reply1.ans5"
+              ],
+              "he2": [
+                "eye.prevention",
+                "eye.reply1.ans5"
+              ],
+              "yu4": [
+                "eye.prevention"
+              ],
+              "fang2": [
+                "eye.prevention"
+              ],
+              "jin4": [
+                "eye.prevention",
+                "eye.reply1.ans3"
+              ],
+              "shi4": [
+                "eye.prevention"
+              ],
+              "jia1": [
+                "eye.prevention"
+              ],
+              "shen1": [
+                "eye.prevention"
+              ],
+              "%eye%": [
+                "eye.reply1.ans1",
+                "eye.reply1.ans2",
+                "eye.reply1.ans4",
+                "eye.reply2.ans1",
+                "eye.reply2.ans2"
+              ],
+              "lao3": [
+                "eye.reply1.ans1"
+              ],
+              "shi5": [
+                "eye.reply1.ans1"
+              ],
+              "%symptom%": [
+                "eye.reply1.ans1",
+                "eye.reply1.ans2",
+                "eye.reply1.ans4"
+              ],
+              "gai1": [
+                "eye.reply1.ans1",
+                "eye.reply1.ans3",
+                "eye.reply1.ans4"
+              ],
+              "%eye%%symptom%": [
+                "eye.reply1.ans1",
+                "eye.reply1.ans3",
+                "eye.reply1.ans4",
+                "eye.reply1.ans5",
+                "eye.reply1.ans6"
+              ],
+              "wei4": [
+                "eye.reply1.ans2"
+              ],
+              "de5": [
+                "eye.reply1.ans2"
+              ],
+              "hen3": [
+                "eye.reply1.ans2"
+              ],
+              "hao3": [
+                "eye.reply1.ans2",
+                "eye.reply1.ans4",
+                "eye.reply2.ans1",
+                "eye.reply2.ans2"
+              ],
+              "hao4": [
+                "eye.reply1.ans2",
+                "eye.reply1.ans4",
+                "eye.reply2.ans1",
+                "eye.reply2.ans2"
+              ],
+              "zui4": [
+                "eye.reply1.ans3"
+              ],
+              "shu1": [
+                "eye.reply1.ans3"
+              ],
+              "huan3": [
+                "eye.reply1.ans3"
+              ],
+              "yao1": [
+                "eye.reply1.ans5"
+              ],
+              "yao4": [
+                "eye.reply1.ans5"
+              ],
+              "ren2": [
+                "eye.reply1.ans6"
+              ],
+              "lei4": [
+                "eye.reply1.ans6"
+              ],
+              "ye4": [
+                "eye.reply1.ans6"
+              ],
+              "yong4": [
+                "eye.reply1.ans6"
+              ],
+              "%serious%": [
+                "eye.reply2.ans1",
+                "eye.reply2.ans2"
+              ],
+              "%eye%%serious%": [
+                "eye.reply2.ans1"
+              ],
+              "fei1": [
+                "eye.reply2.ans2"
+              ],
+              "chang2": [
+                "eye.reply2.ans2"
+              ],
+              "e2": [
+                "eye.reply2.ans2"
+              ],
+              "o2": [
+                "eye.reply2.ans2"
+              ],
+              "o4": [
+                "eye.reply2.ans2"
+              ],
+              "o5": [
+                "eye.reply2.ans2"
+              ],
+              "wo3": [
+                "eye.reply2.ans2"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "zh",
+                "tag": "nlu-zh",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "%hi%",
+                "%hi%%hi%",
+                "%hi%%none%",
+                "%hi%%hi%%none%",
+                "%intro%",
+                "zi4",
+                "ji3",
+                "gong1",
+                "neng2",
+                "you3",
+                "shen2",
+                "me5",
+                "jie3",
+                "jue2",
+                "fang1",
+                "fa3",
+                "zen3",
+                "ban4",
+                "gai3",
+                "shan4",
+                "ru2",
+                "he2",
+                "yu4",
+                "fang2",
+                "jin4",
+                "shi4",
+                "jia1",
+                "shen1",
+                "%eye%",
+                "lao3",
+                "shi5",
+                "%symptom%",
+                "gai1",
+                "%eye%%symptom%",
+                "wei4",
+                "de5",
+                "hen3",
+                "hao3",
+                "hao4",
+                "zui4",
+                "shu1",
+                "huan3",
+                "yao1",
+                "yao4",
+                "ren2",
+                "lei4",
+                "ye4",
+                "yong4",
+                "%serious%",
+                "%eye%%serious%",
+                "fei1",
+                "chang2",
+                "e2",
+                "o2",
+                "o4",
+                "o5",
+                "wo3"
+              ],
+              "intents": [
+                "greeting.hello",
+                "greeting.intro",
+                "greeting.question",
+                "eye.prevention",
+                "eye.reply1.ans1",
+                "eye.reply1.ans2",
+                "eye.reply1.ans3",
+                "eye.reply1.ans4",
+                "eye.reply1.ans5",
+                "eye.reply1.ans6",
+                "eye.reply2.ans1",
+                "eye.reply2.ans2"
+              ],
+              "perceptrons": [
+                [
+                  9.169395446777344,
+                  9.169394493103027,
+                  9.169390678405762,
+                  9.16938304901123,
+                  -5.11631441116333,
+                  -1.0431327819824219,
+                  -1.0431327819824219,
+                  -2.6445937156677246,
+                  -2.49204683303833,
+                  -0.4810982346534729,
+                  -0.39036819338798523,
+                  -2.001896858215332,
+                  -1.4389926195144653,
+                  -1.5054367780685425,
+                  -1.0904048681259155,
+                  -1.0904048681259155,
+                  -1.5786017179489136,
+                  -1.544221043586731,
+                  -2.5609495639801025,
+                  -2.5609495639801025,
+                  -0.3728516101837158,
+                  -0.3728516101837158,
+                  -1.2763200998306274,
+                  -1.2763200998306274,
+                  -1.295214056968689,
+                  -1.2763200998306274,
+                  -0.24930636584758759,
+                  -0.24930636584758759,
+                  -2.589993715286255,
+                  -0.07233074307441711,
+                  -0.07233074307441711,
+                  -1.5043326616287231,
+                  -0.11226403713226318,
+                  -5.116308212280273,
+                  -0.047128546983003616,
+                  -0.047128546983003616,
+                  -1.0238903760910034,
+                  -0.7375966906547546,
+                  -0.7375966906547546,
+                  -0.009446972981095314,
+                  -0.009446972981095314,
+                  -0.009446972981095314,
+                  -0.011501539498567581,
+                  -0.011501539498567581,
+                  -0.1257951855659485,
+                  -0.1257951855659485,
+                  -0.1257951855659485,
+                  -0.12058964371681213,
+                  -1.0856335163116455,
+                  -5.116299629211426,
+                  -0.7203440070152283,
+                  -0.7203440070152283,
+                  -0.034245871007442474,
+                  -0.034245871007442474,
+                  -0.034245871007442474,
+                  -0.034245871007442474,
+                  -0.034245871007442474,
+                  5.116315582693838
+                ],
+                [
+                  -1.8852416276931763,
+                  -1.8851882219314575,
+                  -1.8851325511932373,
+                  -1.8850746154785156,
+                  12.390339851379395,
+                  0.006408694200217724,
+                  0.006408694200217724,
+                  5.481168270111084,
+                  6.919145107269287,
+                  -0.07666558772325516,
+                  0.7251893281936646,
+                  -0.637595534324646,
+                  -0.6356919407844543,
+                  -1.1164344549179077,
+                  -0.3442848324775696,
+                  -0.3442848324775696,
+                  -1.3452190160751343,
+                  -1.1016573905944824,
+                  -0.9696750044822693,
+                  -0.9696750044822693,
+                  -0.23655956983566284,
+                  -0.23655956983566284,
+                  -0.5273667573928833,
+                  -0.5273667573928833,
+                  -0.6355910897254944,
+                  -0.5273667573928833,
+                  -0.15134020149707794,
+                  -0.15134020149707794,
+                  -1.246329426765442,
+                  -0.13419590890407562,
+                  -0.13419590890407562,
+                  -0.8330422043800354,
+                  -0.3186429738998413,
+                  -2.337003231048584,
+                  -0.4346628189086914,
+                  -0.4346628189086914,
+                  -0.5138657093048096,
+                  -0.30276715755462646,
+                  -0.30276715755462646,
+                  -0.07591940462589264,
+                  -0.07591940462589264,
+                  -0.07591940462589264,
+                  0,
+                  0,
+                  -1.4362081289291382,
+                  -1.4362081289291382,
+                  -1.4362081289291382,
+                  -1.2713357210159302,
+                  -0.397968053817749,
+                  -1.8853451013565063,
+                  -0.20501455664634705,
+                  -0.20501455664634705,
+                  -0.02297702245414257,
+                  -0.02297702245414257,
+                  -0.02297702245414257,
+                  -0.02297702245414257,
+                  -0.02297702245414257,
+                  1.8859374982390613
+                ],
+                [
+                  -2.2452263832092285,
+                  -2.244948148727417,
+                  -2.244662046432495,
+                  -2.2443690299987793,
+                  -2.244774341583252,
+                  -0.2863902747631073,
+                  -0.2863902747631073,
+                  -1.123579978942871,
+                  -1.123579978942871,
+                  -0.2790820896625519,
+                  -0.5248145461082458,
+                  0.800738513469696,
+                  2.507901668548584,
+                  2.262169361114502,
+                  3.6338653564453125,
+                  3.6338653564453125,
+                  1.3256361484527588,
+                  9.825847625732422,
+                  6.003104209899902,
+                  6.003104209899902,
+                  -0.41655871272087097,
+                  -0.41655871272087097,
+                  -0.5032175779342651,
+                  -0.5032175779342651,
+                  -0.7428575754165649,
+                  -0.5032175779342651,
+                  -0.11699574440717697,
+                  -0.11699574440717697,
+                  -4.429663181304932,
+                  -1.4982128143310547,
+                  -1.4982128143310547,
+                  -4.429663181304932,
+                  -2.3511195182800293,
+                  -16.370155334472656,
+                  -0.19177775084972382,
+                  -0.19177775084972382,
+                  -0.20964424312114716,
+                  -2.6738877296447754,
+                  -2.6738877296447754,
+                  -0.16201846301555634,
+                  -0.16201846301555634,
+                  -0.16201846301555634,
+                  -0.21443739533424377,
+                  -0.21443739533424377,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -14.16304874420166,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2.249679481069681
+                ],
+                [
+                  -0.2553681433200836,
+                  -0.25460442900657654,
+                  -0.2543209195137024,
+                  -0.25428950786590576,
+                  -0.25454142689704895,
+                  -0.07377488911151886,
+                  -0.07377488911151886,
+                  -0.14695991575717926,
+                  -0.13119053840637207,
+                  -0.012762947008013725,
+                  -0.0712934136390686,
+                  -0.5824074149131775,
+                  -0.1267915517091751,
+                  -0.21767371892929077,
+                  -0.04178915172815323,
+                  -0.04178915172815323,
+                  -0.48535969853401184,
+                  -0.09440700709819794,
+                  -0.2678142786026001,
+                  -0.2678142786026001,
+                  1.474728605899145e-7,
+                  1.474728605899145e-7,
+                  3.5982296466827393,
+                  3.5982296466827393,
+                  3.2367348670959473,
+                  3.5982296466827393,
+                  2.2527697751684173e-7,
+                  2.2527697751684173e-7,
+                  -0.41441813111305237,
+                  -0.059228140860795975,
+                  -0.059228140860795975,
+                  -0.28530633449554443,
+                  -0.4716489613056183,
+                  -0.9340916872024536,
+                  -0.04690692573785782,
+                  -0.04690692573785782,
+                  -0.10102298855781555,
+                  -0.10819303244352341,
+                  -0.10819303244352341,
+                  -0.35411807894706726,
+                  -0.35411807894706726,
+                  -0.35411807894706726,
+                  -0.1872037947177887,
+                  -0.1872037947177887,
+                  -0.0078866146504879,
+                  -0.0078866146504879,
+                  -0.0078866146504879,
+                  -0.0078866146504879,
+                  -0.0676044151186943,
+                  -0.25769510865211487,
+                  -0.01749730482697487,
+                  -0.01749730482697487,
+                  -0.006919184233993292,
+                  -0.006919184233993292,
+                  -0.006919184233993292,
+                  -0.006919184233993292,
+                  -0.006919184233993292,
+                  0.25428989468131086
+                ],
+                [
+                  -1.4511256217956543,
+                  -1.4508236646652222,
+                  -1.450513482093811,
+                  -1.4501949548721313,
+                  -1.449868083000183,
+                  -0.15597029030323029,
+                  -0.15597029030323029,
+                  -2.398190975189209,
+                  -0.028930578380823135,
+                  -2.34995436668396,
+                  -0.09655178338289261,
+                  -2.1656126976013184,
+                  -7.033605575561523,
+                  -7.158430099487305,
+                  -0.33444637060165405,
+                  -0.33444637060165405,
+                  -2.040788173675537,
+                  2.6887056827545166,
+                  -7.090108394622803,
+                  -7.090108394622803,
+                  -0.34128522872924805,
+                  -0.34128522872924805,
+                  -0.021326670423150063,
+                  -0.021326670423150063,
+                  -2.9023072719573975,
+                  -0.021326670423150063,
+                  -0.0034690212924033403,
+                  -0.0034690212924033403,
+                  0.4366249442100525,
+                  5.640525817871094,
+                  5.640525817871094,
+                  1.0782968997955322,
+                  1.549467921257019,
+                  12.740530967712402,
+                  -0.09655178338289261,
+                  -0.09655178338289261,
+                  -2.9708216190338135,
+                  -1.5832428932189941,
+                  -1.5832428932189941,
+                  -2.8785955905914307,
+                  -2.8785955905914307,
+                  -2.8785955905914307,
+                  -0.34022900462150574,
+                  -0.34022900462150574,
+                  -2.365295648574829,
+                  -2.365295648574829,
+                  -2.365295648574829,
+                  -2.34995436668396,
+                  -0.641609787940979,
+                  -1.4518301486968994,
+                  -0.625148355960846,
+                  -0.625148355960846,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1.4558670970715237
+                ],
+                [
+                  -0.250729501247406,
+                  -0.24662865698337555,
+                  -0.24352286756038666,
+                  -0.24042974412441254,
+                  -0.29710444808006287,
+                  -0.06397935003042221,
+                  -0.06397935003042221,
+                  -0.17230206727981567,
+                  -0.11892718076705933,
+                  -0.12605567276477814,
+                  1.094657301902771,
+                  -4.0926618576049805,
+                  -0.6790196895599365,
+                  0.5395791530609131,
+                  -0.2227826863527298,
+                  -0.2227826863527298,
+                  -5.18731164932251,
+                  -5.0025434494018555,
+                  -0.14583614468574524,
+                  -0.14583614468574524,
+                  -0.046503208577632904,
+                  -0.046503208577632904,
+                  -0.05286483094096184,
+                  -0.05286483094096184,
+                  -0.15303575992584229,
+                  -0.05286483094096184,
+                  -0.014547782018780708,
+                  -0.014547782018780708,
+                  2.8727924823760986,
+                  -0.5529616475105286,
+                  -0.5529616475105286,
+                  8.57729721069336,
+                  -0.7416037321090698,
+                  -0.811555027961731,
+                  1.228484034538269,
+                  1.228484034538269,
+                  2.745576858520508,
+                  1.3707966804504395,
+                  1.3707966804504395,
+                  -0.05009157583117485,
+                  -0.05009157583117485,
+                  -0.05009157583117485,
+                  -0.015504281036555767,
+                  -0.015504281036555767,
+                  -0.03465442359447479,
+                  -0.03465442359447479,
+                  -0.03465442359447479,
+                  -0.013865829445421696,
+                  -5.70442533493042,
+                  -0.2662516236305237,
+                  -0.5427813529968262,
+                  -0.5427813529968262,
+                  -0.3287031948566437,
+                  -0.3287031948566437,
+                  -0.3287031948566437,
+                  -0.3287031948566437,
+                  -0.3287031948566437,
+                  0.09118367319304331
+                ],
+                [
+                  -0.0022436147555708885,
+                  -0.002149939304217696,
+                  -0.0020601749420166016,
+                  -0.0019741582218557596,
+                  -0.07183464616537094,
+                  -0.0017983216093853116,
+                  -0.0017983216093853116,
+                  -0.09915172308683395,
+                  -0.00040424164035357535,
+                  -0.18752248585224152,
+                  -0.0654107853770256,
+                  0.3931530714035034,
+                  -1.3505808115005493,
+                  -1.3505808115005493,
+                  -0.03348614647984505,
+                  -0.03348614647984505,
+                  0.4725545644760132,
+                  -0.8338024616241455,
+                  -0.6550162434577942,
+                  -0.6550162434577942,
+                  -0.20820051431655884,
+                  -0.20820051431655884,
+                  -0.6481651663780212,
+                  -0.6481651663780212,
+                  2.453192949295044,
+                  -0.6481651663780212,
+                  -0.19943466782569885,
+                  -0.19943466782569885,
+                  -0.4857022762298584,
+                  -0.26028287410736084,
+                  -0.26028287410736084,
+                  -0.4857022762298584,
+                  1.6355308294296265,
+                  0.541850209236145,
+                  0,
+                  0,
+                  0,
+                  -0.15686820447444916,
+                  -0.15686820447444916,
+                  3.1104273796081543,
+                  3.1104273796081543,
+                  3.1104273796081543,
+                  -0.014250269159674644,
+                  -0.014250269159674644,
+                  -0.09486524760723114,
+                  -0.09486524760723114,
+                  -0.09486524760723114,
+                  -0.09486524760723114,
+                  0,
+                  -0.1725609302520752,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.5418496305256705
+                ],
+                [
+                  -0.054030366241931915,
+                  -0.051815252751111984,
+                  -0.04969090595841408,
+                  -0.04765361174941063,
+                  -0.20381195843219757,
+                  -0.03991430997848511,
+                  -0.03991430997848511,
+                  -3.599172353744507,
+                  0,
+                  -0.19606617093086243,
+                  -1.1592133045196533,
+                  1.9868197441101074,
+                  7.542689323425293,
+                  6.505434036254883,
+                  -0.15408580005168915,
+                  -0.15408580005168915,
+                  3.1528592109680176,
+                  8.508773803710938,
+                  -3.0184884071350098,
+                  -3.0184884071350098,
+                  -0.2151520997285843,
+                  -0.2151520997285843,
+                  -0.020598096773028374,
+                  -0.020598096773028374,
+                  -1.2533185482025146,
+                  -0.020598096773028374,
+                  -0.010028144344687462,
+                  -0.010028144344687462,
+                  1.3248279094696045,
+                  -1.8506098985671997,
+                  -1.8506098985671997,
+                  3.6650776863098145,
+                  -5.004644870758057,
+                  13.636510848999023,
+                  -1.0303950309753418,
+                  -1.0303950309753418,
+                  -1.043495535850525,
+                  4.373754501342773,
+                  4.373754501342773,
+                  -1.2259581089019775,
+                  -1.2259581089019775,
+                  -1.2259581089019775,
+                  -0.2151520997285843,
+                  -0.2151520997285843,
+                  -3.599172353744507,
+                  -3.599172353744507,
+                  -3.599172353744507,
+                  -0.06355541944503784,
+                  -2.320556163787842,
+                  -2.325763702392578,
+                  -0.09441074728965759,
+                  -0.09441074728965759,
+                  -0.39985358715057373,
+                  -0.39985358715057373,
+                  -0.39985358715057373,
+                  -0.39985358715057373,
+                  -0.39985358715057373,
+                  -13.378847799859155
+                ],
+                [
+                  -0.09554023295640945,
+                  -0.0917433425784111,
+                  -0.08809702098369598,
+                  -0.08459529280662537,
+                  -0.1968609094619751,
+                  -0.05501072481274605,
+                  -0.05501072481274605,
+                  -0.6839872002601624,
+                  -0.014608749188482761,
+                  -0.40362635254859924,
+                  -0.04224869981408119,
+                  0.6453503370285034,
+                  -2.0675048828125,
+                  -2.0675048828125,
+                  -0.10876137763261795,
+                  -0.10876137763261795,
+                  0.7116468548774719,
+                  -0.7021849155426025,
+                  6.101077079772949,
+                  6.101077079772949,
+                  0.10190334171056747,
+                  0.10190334171056747,
+                  -0.3490610718727112,
+                  -0.3490610718727112,
+                  -1.3424129486083984,
+                  -0.3490610718727112,
+                  -0.17564238607883453,
+                  -0.17564238607883453,
+                  -0.2211207002401352,
+                  -0.013024657964706421,
+                  -0.013024657964706421,
+                  -0.013024657964706421,
+                  -2.2633631229400635,
+                  12.096943855285645,
+                  0,
+                  0,
+                  0,
+                  -0.1108425185084343,
+                  -0.1108425185084343,
+                  -0.9485481977462769,
+                  -0.9485481977462769,
+                  -0.9485481977462769,
+                  0.4957680404186249,
+                  0.4957680404186249,
+                  -0.6509427428245544,
+                  -0.6509427428245544,
+                  -0.6509427428245544,
+                  -0.3245524764060974,
+                  -0.1951252818107605,
+                  -0.32874128222465515,
+                  -0.05483917519450188,
+                  -0.05483917519450188,
+                  -0.02188127674162388,
+                  -0.02188127674162388,
+                  -0.02188127674162388,
+                  -0.02188127674162388,
+                  -0.02188127674162388,
+                  -11.127289647047974
+                ],
+                [
+                  -0.056570570915937424,
+                  -0.05423857271671295,
+                  -0.0520026795566082,
+                  -0.0498589351773262,
+                  -0.2709569036960602,
+                  -0.043203484266996384,
+                  -0.043203484266996384,
+                  2.5412182807922363,
+                  -1.3736121654510498,
+                  0.3636595904827118,
+                  -0.15706183016300201,
+                  -0.6834551095962524,
+                  0.46495702862739563,
+                  0.46262824535369873,
+                  -0.3732398450374603,
+                  -0.3732398450374603,
+                  -0.46225646138191223,
+                  -0.0426911935210228,
+                  -0.2635088562965393,
+                  -0.2635088562965393,
+                  -0.08587141335010529,
+                  -0.08587141335010529,
+                  -0.06083003059029579,
+                  -0.06083003059029579,
+                  -0.17509105801582336,
+                  -0.06083003059029579,
+                  -0.020678546279668808,
+                  -0.020678546279668808,
+                  -0.18588054180145264,
+                  0,
+                  0,
+                  -0.009548570029437542,
+                  -0.3606277108192444,
+                  0.24002155661582947,
+                  -0.0011643863981589675,
+                  -0.0011643863981589675,
+                  -0.009548570029437542,
+                  -0.09768760204315186,
+                  -0.09768760204315186,
+                  -0.10186336189508438,
+                  -0.10186336189508438,
+                  -0.10186336189508438,
+                  -0.048673223704099655,
+                  -0.048673223704099655,
+                  3.9148306846618652,
+                  3.9148306846618652,
+                  3.9148306846618652,
+                  0.5639289021492004,
+                  -0.1650633066892624,
+                  -0.10308443009853363,
+                  -0.04417736455798149,
+                  -0.04417736455798149,
+                  -0.024289937689900398,
+                  -0.024289937689900398,
+                  -0.024289937689900398,
+                  -0.024289937689900398,
+                  -0.024289937689900398,
+                  -1.1676054989728786
+                ],
+                [
+                  -1.0773792266845703,
+                  -1.0680091381072998,
+                  -1.0592378377914429,
+                  -1.0509936809539795,
+                  -1.083409070968628,
+                  -0.2046743929386139,
+                  -0.2046743929386139,
+                  -0.5794925093650818,
+                  -0.5794925093650818,
+                  -0.2861764132976532,
+                  -0.3408830165863037,
+                  -0.49611029028892517,
+                  -0.34883564710617065,
+                  -0.40357160568237305,
+                  -0.21845878660678864,
+                  -0.21845878660678864,
+                  -0.1371172070503235,
+                  0.4231472313404083,
+                  -0.5593295097351074,
+                  -0.5593295097351074,
+                  -0.08196825534105301,
+                  -0.08196825534105301,
+                  -0.23956076800823212,
+                  -0.23956076800823212,
+                  -0.42241865396499634,
+                  -0.23956076800823212,
+                  -0.05456993728876114,
+                  -0.05456993728876114,
+                  -0.36833760142326355,
+                  -0.40671780705451965,
+                  -0.40671780705451965,
+                  -7.340881824493408,
+                  -0.7597904205322266,
+                  -1.0444391965866089,
+                  -0.027368318289518356,
+                  -0.027368318289518356,
+                  -0.027368318289518356,
+                  3.674180269241333,
+                  3.674180269241333,
+                  -0.1499488204717636,
+                  -0.1499488204717636,
+                  -0.1499488204717636,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  6.972599983215332,
+                  14.060744285583496,
+                  -3.520545721054077,
+                  -3.520545721054077,
+                  -2.855722188949585,
+                  -2.855722188949585,
+                  -2.855722188949585,
+                  -2.855722188949585,
+                  -2.855722188949585,
+                  0.3270723080297706
+                ],
+                [
+                  -0.17985722422599792,
+                  -0.17444898188114166,
+                  -0.17158305644989014,
+                  -0.16679666936397552,
+                  -0.22979117929935455,
+                  -0.0753265917301178,
+                  -0.0753265917301178,
+                  -0.1218983456492424,
+                  -0.11354436725378036,
+                  -0.03778492659330368,
+                  -0.1479685753583908,
+                  -0.6415817141532898,
+                  -0.06447118520736694,
+                  -0.20961925387382507,
+                  -0.060603782534599304,
+                  -0.060603782534599304,
+                  -0.4393179714679718,
+                  -0.4393179714679718,
+                  -0.10625716298818588,
+                  -0.10625716298818588,
+                  -0.0607503317296505,
+                  -0.0607503317296505,
+                  -0.11201044172048569,
+                  -0.11201044172048569,
+                  -0.11201044172048569,
+                  -0.11201044172048569,
+                  -0.03757987543940544,
+                  -0.03757987543940544,
+                  1.6418681144714355,
+                  -0.09215463697910309,
+                  -0.09215463697910309,
+                  -1.6111822128295898,
+                  -0.09215463697910309,
+                  -0.14634361863136292,
+                  -0.10196791589260101,
+                  -0.10196791589260101,
+                  -0.42055097222328186,
+                  -2.4639952182769775,
+                  -2.4639952182769775,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.0025341908913105726,
+                  -0.0025341908913105726,
+                  -0.0025341908913105726,
+                  -0.0025341908913105726,
+                  3.26033878326416,
+                  -0.036922093480825424,
+                  4.678859710693359,
+                  4.678859710693359,
+                  2.857142210006714,
+                  2.857142210006714,
+                  2.857142210006714,
+                  2.857142210006714,
+                  2.857142210006714,
+                  0.02578594052232911
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "zh",
+        "%hi%"
+      ],
+      [
+        "zh",
+        "%hi%%hi%"
+      ],
+      [
+        "zh",
+        "%hi%%none%"
+      ],
+      [
+        "zh",
+        "%hi%%hi%%none%"
+      ],
+      [
+        "zh",
+        "%intro%自己"
+      ],
+      [
+        "zh",
+        "功能"
+      ],
+      [
+        "zh",
+        "%intro%"
+      ],
+      [
+        "zh",
+        "有什麼%intro%"
+      ],
+      [
+        "zh",
+        "解決方法"
+      ],
+      [
+        "zh",
+        "怎麼辦"
+      ],
+      [
+        "zh",
+        "改善"
+      ],
+      [
+        "zh",
+        "如何預防近視"
+      ],
+      [
+        "zh",
+        "如何預防近視加深"
+      ],
+      [
+        "zh",
+        "預防近視"
+      ],
+      [
+        "zh",
+        "預防近視加深"
+      ],
+      [
+        "zh",
+        "如何預防加深近視"
+      ],
+      [
+        "zh",
+        "預防加深近視"
+      ],
+      [
+        "zh",
+        "%eye%老是%symptom%該怎麼辦"
+      ],
+      [
+        "zh",
+        "%eye%%symptom%"
+      ],
+      [
+        "zh",
+        "為什麼覺得%eye%很%symptom%"
+      ],
+      [
+        "zh",
+        "%eye%好%symptom%"
+      ],
+      [
+        "zh",
+        "%eye%很%symptom%"
+      ],
+      [
+        "zh",
+        "最近%eye%%symptom%該怎麼舒緩"
+      ],
+      [
+        "zh",
+        "%eye%%symptom%該怎麼解決"
+      ],
+      [
+        "zh",
+        "%eye%%symptom%解決"
+      ],
+      [
+        "zh",
+        "%eye%%symptom%解決方法"
+      ],
+      [
+        "zh",
+        "%eye%好%symptom%怎麼辦"
+      ],
+      [
+        "zh",
+        "解決%eye%%symptom%"
+      ],
+      [
+        "zh",
+        "%eye%%symptom%怎麼改善"
+      ],
+      [
+        "zh",
+        "改善%eye%%symptom%"
+      ],
+      [
+        "zh",
+        "%eye%%symptom%要如何改善"
+      ],
+      [
+        "zh",
+        "人工淚液解決%eye%%symptom%"
+      ],
+      [
+        "zh",
+        "%eye%%symptom%人工淚液有用"
+      ],
+      [
+        "zh",
+        "%eye%好%serious%"
+      ],
+      [
+        "zh",
+        "%eye%%serious%"
+      ],
+      [
+        "zh",
+        "%eye%%serious%怎麼辦"
+      ],
+      [
+        "zh",
+        "%eye%非常%serious%"
+      ],
+      [
+        "zh",
+        "好%serious%哦我的%eye%"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {
+      "zh": {
+        "hi": {
+          "name": "hi",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "嗨~",
+              "texts": [
+                "嗨",
+                "你好",
+                "您好",
+                "你們好",
+                "Hello",
+                "Hi",
+                "How are you"
+              ]
+            }
+          ]
+        },
+        "none": {
+          "name": "none",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "~",
+              "texts": [
+                "~",
+                "!",
+                "#",
+                "@",
+                "?",
+                "%",
+                "."
+              ]
+            }
+          ]
+        },
+        "eye": {
+          "name": "eye",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "眼睛",
+              "texts": [
+                "eye",
+                "EYE",
+                "眼睛",
+                "眼珠",
+                "眼"
+              ]
+            }
+          ]
+        },
+        "symptom": {
+          "name": "symptom",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "乾癢",
+              "texts": [
+                "乾乾癢癢",
+                "乾癢",
+                "乾澀",
+                "癢"
+              ]
+            }
+          ]
+        },
+        "serious": {
+          "name": "serious",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "疼痛",
+              "texts": [
+                "疼痛",
+                "痛"
+              ]
+            }
+          ]
+        },
+        "intro": {
+          "name": "intro",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "介紹",
+              "texts": [
+                "你會做甚麼",
+                "功能",
+                "介紹"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "zh": {
+        "eye.reply1.ans1": [
+          {
+            "answer": "可能3C產品用太久，讓眼睛休息一下吧~"
+          }
+        ],
+        "eye.reply1.ans2": [
+          {
+            "answer": "適度讓眼睛休息，用眼30分鐘，記得休息10分鐘哦"
+          }
+        ],
+        "eye.reply1.ans3": [
+          {
+            "answer": "若長期有眼睛乾癢問題，建議就醫檢查哦"
+          }
+        ],
+        "eye.reply1.ans4": [
+          {
+            "answer": "可以嘗試溫敷眼睛、使用加濕器改善室內乾燥問題"
+          }
+        ],
+        "eye.reply1.ans5": [
+          {
+            "answer": "建議補充Omega-3魚油、亞麻仁油等，減少淚液揮發，增加淚液分泌"
+          }
+        ],
+        "eye.reply1.ans6": [
+          {
+            "answer": "滴人工淚液無法真正改善乾眼問題，只有刺激淚腺，才能從根本解決"
+          }
+        ],
+        "eye.reply2.ans1": [
+          {
+            "answer": "讓眼睛休息一下，若沒改善，建議就醫檢查"
+          }
+        ],
+        "eye.reply2.ans2": [
+          {
+            "answer": "若有劇烈的疼痛，請盡快就醫"
+          }
+        ],
+        "greeting.intro": [
+          {
+            "answer": "EYE眼小秘書主要提供眼部衛教與眼部疾病測驗，進行測驗與瞭解正確的眼部疾病知識，才有助於及早發現與預防疾病的發生哦！有關於眼部的問題，都可以詢問小秘書，若眼睛已經出現了異常或是疼痛，有可能是眼疾的前兆哦，請盡快就醫治療，以免拖延太久，導致病情惡化。\n\n\n\"健康日誌\"：可以將你的健康狀況記錄在這裡哦~\n\n\"瞭解眼部疾病\"：可以瞭解常見的眼部疾病。\n\n\"提醒事項\"：可以將需要提醒的事情記錄在這裡。\n\n\"簡易測驗\"：可以初步瞭解眼睛目前有無異常\n\n\"問題諮詢\"：有關於眼部的問題，小秘書會盡力回答！\n\n\"貼心叮嚀\"：這些都是小秘書親自製作的叮嚀圖哦~\n\n\n 以上功能都是免費的哦，小秘書祝大家都有雙健康的好眼睛！"
+          }
+        ],
+        "greeting.hello": [
+          {
+            "answer": "嗨~也可以使用圖文選單與我互動哦!"
+          }
+        ],
+        "greeting.question": [
+          {
+            "answer": "需要什麼幫助嗎?"
+          }
+        ],
+        "eye.prevention": [
+          {
+            "answer": "1.保持良好的閱讀習慣\n2.充足的戶外運動\n3.適度的使用3C產品\n4.均衡的營養\n5.尋求正確的治療"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {
+    "greeting.hello": {
+      "hi": {
+        "intent": "greeting.hello",
+        "entity": "hi",
+        "mandatory": false,
+        "locales": {}
+      },
+      "hi%%hi": {
+        "intent": "greeting.hello",
+        "entity": "hi%%hi",
+        "mandatory": false,
+        "locales": {}
+      },
+      "hi%%none": {
+        "intent": "greeting.hello",
+        "entity": "hi%%none",
+        "mandatory": false,
+        "locales": {}
+      },
+      "hi%%hi%%none": {
+        "intent": "greeting.hello",
+        "entity": "hi%%hi%%none",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "greeting.intro": {
+      "intro": {
+        "intent": "greeting.intro",
+        "entity": "intro",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "eye.reply1.ans1": {
+      "eye%%symptom": {
+        "intent": "eye.reply1.ans1",
+        "entity": "eye%%symptom",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "eye.reply1.ans2": {
+      "eye%好%symptom": {
+        "intent": "eye.reply1.ans2",
+        "entity": "eye%好%symptom",
+        "mandatory": false,
+        "locales": {}
+      },
+      "eye%很%symptom": {
+        "intent": "eye.reply1.ans2",
+        "entity": "eye%很%symptom",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "eye.reply2.ans1": {
+      "eye%好%serious": {
+        "intent": "eye.reply2.ans1",
+        "entity": "eye%好%serious",
+        "mandatory": false,
+        "locales": {}
+      },
+      "eye%%serious": {
+        "intent": "eye.reply2.ans1",
+        "entity": "eye%%serious",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "eye.reply2.ans2": {
+      "eye%非常%serious": {
+        "intent": "eye.reply2.ans2",
+        "entity": "eye%非常%serious",
+        "mandatory": false,
+        "locales": {}
+      }
+    }
+  }
+}
