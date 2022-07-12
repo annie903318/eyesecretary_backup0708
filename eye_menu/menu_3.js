@@ -1,5 +1,7 @@
 const linebot = require('linebot');
-const express = require('express');
+const https = require("https")
+const express = require("express")
+const app = express()
 
 const bot = linebot({
     channelId: process.env.CHANNEL_ID,
@@ -90,6 +92,22 @@ function Menu3() {
                   //   console.log('userId: ' + event.source.userId);
                   //   console.log('send: ' + sendMsg);
                   // }, 3000);
+                  const client = new line.Client({
+                    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
+                  });
+                  console.log('channelAccessToken',channelAccessToken)
+                  const message = {
+                    type: 'text',
+                    text: 'Hello World!'
+                  };
+                  console.log('message',message)
+                  client.pushMessage('<to>', message)
+                    .then(() => {
+                    })
+                    .catch((err) => {
+                     console.log(err);
+                    });
+
                   pp.release();
                   return client.replyMessage(event.replyToken, msg);
               });
