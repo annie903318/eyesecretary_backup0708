@@ -152,7 +152,7 @@ function Menu3() {
                           "text": "待辦事項",
                           "weight": "bold",
                           "color": "#fff",
-                          "background": "#005757",
+                          "backgroundColor": "#005757",
                           "gravity": "center"
                         },
                         //原右上角設定提醒按鈕
