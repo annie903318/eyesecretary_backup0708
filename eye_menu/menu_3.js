@@ -7,7 +7,7 @@ function Menu3() {
       date.getDate() < 10?d = '0'+(date.getDate()):d = (date.getDate());
       let msg = {
           "type": "template",
-          "altText": "This is a buttons template",
+          "altText": "提醒事項",
           "template": {
               "type": "buttons",
               "text": "提醒事項",
@@ -140,6 +140,8 @@ function Menu3() {
                   else if(a[0] >= 12 && a[0] <= 23){
                     now_time = '下午 ' + now_time;
                   }
+                  console.log(`使用者 ID: ${event.source.userId}`);
+
                   // 將資訊放入陣列中
                   columns[i] = {
                     "type": "bubble",
