@@ -151,20 +151,21 @@ function Menu3() {
                           "type": "text",
                           "text": "待辦事項",
                           "weight": "bold",
-                          "color": "#00ff00",
+                          "color": "#005757",
                           "gravity": "center"
                         },
-                        {
-                          "type": "button",
-                          "action": {
-                            "type": "uri",
-                            "label": "設定提醒",
-                            "uri": "https://eye-secretary.herokuapp.com/auth/notify"
-                          },
-                          "height": "sm"
-                        }
+                        //原右上角設定提醒按鈕
+                        // {
+                        //   "type": "button",
+                        //   "action": {
+                        //     "type": "uri",
+                        //     "label": "設定提醒",
+                        //     "uri": "https://eye-secretary.herokuapp.com/auth/notify"
+                        //   },
+                        //   "height": "sm"
+                        // }
                       ],
-                      "justifyContent": "center"
+                      "justifyContent": "flex-start"
                     },
                     "body": {
                       "type": "box",
