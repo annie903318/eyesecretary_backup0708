@@ -140,7 +140,11 @@ function Menu3() {
                   else if(a[0] >= 12 && a[0] <= 23){
                     now_time = '下午 ' + now_time;
                   }
-                  console.log(`使用者 ID: ${event.source.userId}`);
+                  //用push推播訊息給使用者
+                  bot.push(`${event.source.userId}`, {
+                    type: 'text',
+                    text: '零食櫃被打開了!'
+                  });
 
                   // 將資訊放入陣列中
                   columns[i] = {
