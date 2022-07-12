@@ -151,7 +151,7 @@ function Menu3() {
                           "type": "text",
                           "text": "待辦事項",
                           "weight": "bold",
-                          "color": "#fff",
+                          "color": "#ffffff",
                           "backgroundColor": "#005757",
                           "gravity": "center"
                         },
