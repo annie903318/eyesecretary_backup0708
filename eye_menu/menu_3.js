@@ -1,3 +1,12 @@
+const linebot = require('linebot');
+const express = require('express');
+
+const bot = linebot({
+    channelId: process.env.CHANNEL_ID,
+    channelSecret: process.env.CHANNEL_SECRET,
+    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
+});
+
 function Menu3() {
     this.Ask_Msg = function(){
       let date = new Date();
@@ -73,6 +82,14 @@ function Menu3() {
                       ]
                     }
                   }
+
+                  //用push設定推播訊息
+                  bot.push(event.source.userId, ['sendMsg']);
+                  // setTimeout(function () {
+                  //   bot.push(event.source.userId, ['sendMsg']);
+                  //   console.log('userId: ' + event.source.userId);
+                  //   console.log('send: ' + sendMsg);
+                  // }, 3000);
                   pp.release();
                   return client.replyMessage(event.replyToken, msg);
               });
@@ -140,11 +157,6 @@ function Menu3() {
                   else if(a[0] >= 12 && a[0] <= 23){
                     now_time = '下午 ' + now_time;
                   }
-                  //用push推播訊息給使用者
-                  bot.push(`${event.source.userId}`, {
-                    type: 'text',
-                    text: '零食櫃被打開了!'
-                  });
 
                   // 將資訊放入陣列中
                   columns[i] = {
