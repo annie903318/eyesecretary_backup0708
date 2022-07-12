@@ -146,13 +146,13 @@ function Menu3() {
                     "header": {
                       "type": "box",
                       "layout": "horizontal",
+                      "backgroundColor": "#005757",
                       "contents": [
                         {
                           "type": "text",
                           "text": "待辦事項",
                           "weight": "bold",
-                          "color": "#ffffff",
-                          "backgroundColor": "#005757",
+                          "color": "#ffffff",                          
                           "gravity": "center"
                         },
                         //原右上角設定提醒按鈕
