@@ -86,10 +86,9 @@ function Menu3() {
                   }
 
                   pp.release();
-                  task_scheduleTime(event.source.userId,msg);
-                  
+                                    
                   return client.replyMessage(event.replyToken);
-              });
+              },bot.push(event.source.userId,msg));
             }
             else{
               let msg = { type: 'text', text: '提醒事項已達到上限了哦！' };
