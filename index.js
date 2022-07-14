@@ -423,7 +423,7 @@ function handlePostEvent(event){
     const eye_function3 = require('./eye_menu/menu_3');
     const ef3 = new eye_function3();
     if(_data.type == 0){
-      // 取消紀錄事項
+      // 取消記錄事項
       ef3.Cancel_Msg(client, event, pool);
     }
     else if(_data.type == 1){

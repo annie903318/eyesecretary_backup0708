@@ -25,7 +25,7 @@ function Menu3() {
               "actions": [
                   {
                     "type": "datetimepicker",
-                    "label": "紀錄事項",
+                    "label": "記錄事項",
                     "data": "type=1&menu=3",
                     "mode":"datetime",
                     "initial":`${date.getFullYear()}-${s}-${d}t00:00`,
