@@ -85,30 +85,8 @@ function Menu3() {
                     }
                   }
 
-                  //用push設定推播訊息
-                  bot.push(event.source.userId, ['sendMsg']);
-                  // setTimeout(function () {
-                  //   bot.push(event.source.userId, ['sendMsg']);
-                  //   console.log('userId: ' + event.source.userId);
-                  //   console.log('send: ' + sendMsg);
-                  // }, 3000);
-                  const client = new line.Client({
-                    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
-                  });
-                  console.log('channelAccessToken',channelAccessToken)
-                  const message = {
-                    type: 'text',
-                    text: 'Hello World!'
-                  };
-                  console.log('message',message)
-                  client.pushMessage('<to>', message)
-                    .then(() => {
-                    })
-                    .catch((err) => {
-                     console.log(err);
-                    });
-
                   pp.release();
+                  
                   return client.replyMessage(event.replyToken, msg);
               });
             }
@@ -118,7 +96,7 @@ function Menu3() {
               return client.replyMessage(event.replyToken, msg);
             }
           });
-        });
+        },console.log(66666));
     };
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
