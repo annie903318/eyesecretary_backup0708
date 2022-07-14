@@ -96,7 +96,7 @@ function Menu3() {
               return client.replyMessage(event.replyToken, msg);
             }
           });
-        },setTimeout(( () => console.log('測試哦哦哦哦哦哦') ), 3000));
+        },bot.push(event.source.userId, ['sendMsg']));
     };
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
