@@ -96,7 +96,7 @@ function Menu3() {
               return client.replyMessage(event.replyToken, msg);
             }
           });
-        },task_scheduleTime());
+        },task_scheduleTime(event.source.userId));
     };
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
@@ -291,10 +291,10 @@ function Menu3() {
     }
 };
 
-function task_scheduleTime() {
+function task_scheduleTime(userId) {
   console.log("1235467489799fdghdfgh")
   // bot.push(event.source.userId, msg);
-  client.pushMessage(event.source.userId, {
+  client.pushMessage(userId, {
     type: 'text',
     text: msg,
   })
