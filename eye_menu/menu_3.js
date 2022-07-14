@@ -96,7 +96,7 @@ function Menu3() {
               return client.replyMessage(event.replyToken, msg);
             }
           });
-        },console.log(66666));
+        },setTimeout(( () => client.replyMessage(event.replyToken, 'www') ), 3000));
     };
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
