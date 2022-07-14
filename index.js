@@ -163,7 +163,7 @@ function handleEvent(event) {
           // 使用者狀態初始化
           let sql = `UPDATE user_status SET status = 0 WHERE userid = '${event.source.userId}'`;
           pp.query(sql, function(err, result){
-            let health_ok = { type: 'text', text: '紀錄成功！' };
+            let health_ok = { type: 'text', text: '記錄成功！' };
             pp.release();
             client.replyMessage(event.replyToken, health_ok);
           });
@@ -176,7 +176,7 @@ function handleEvent(event) {
           // 使用者狀態初始化
           let sql = `UPDATE user_status SET status = 0 WHERE userid = '${event.source.userId}'`;
           pp.query(sql, function(err, result){
-            let health_ok = { type: 'text', text: '紀錄成功！' };
+            let health_ok = { type: 'text', text: '記錄成功！' };
             pp.release();
             client.replyMessage(event.replyToken, health_ok);
           });
@@ -218,7 +218,7 @@ function handleEvent(event) {
           // 使用者狀態初始化
           let sql = `UPDATE user_status SET status = 0 WHERE userid = '${event.source.userId}'`;
           pp.query(sql, function(err, result){
-            let record_ok = { type: 'text', text: `紀錄成功！` };
+            let record_ok = { type: 'text', text: `記錄成功！` };
             pp.release();
             client.replyMessage(event.replyToken, record_ok);
           });
