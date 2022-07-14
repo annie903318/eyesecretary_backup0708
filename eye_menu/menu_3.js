@@ -97,8 +97,12 @@ function Menu3() {
             }
           });
         },function () { 
+          console.log("1235467489799fdghdfgh")
           // bot.push(event.source.userId, msg);
-          client.pushMessage(event.source.userId, msg)
+          client.pushMessage(event.source.userId, {
+            type: 'text',
+            text: msg,
+          })
           //準備接Line的messaging api
           // var url = "https://api.line.me/v2/bot/message/push";
           // var payload= {
