@@ -96,33 +96,7 @@ function Menu3() {
               return client.replyMessage(event.replyToken, msg);
             }
           });
-        },function () { 
-          console.log("1235467489799fdghdfgh")
-          // bot.push(event.source.userId, msg);
-          client.pushMessage(event.source.userId, {
-            type: 'text',
-            text: msg,
-          })
-          //準備接Line的messaging api
-          // var url = "https://api.line.me/v2/bot/message/push";
-          // var payload= {
-          //     "to": event.source.userId,
-          //     //to：要傳送的個人的ID
-          //     "messages": [
-          //     { "type": "text",
-          //       "text": msg,}]
-          // };
-          // var options = {
-          //   "method": "post",
-          //   "headers": {
-          //     "content-Type": "application/json",
-          //     "Authorization": `Bearer { ${process.env.CHANNEL_ACCESS_TOKEN } }`},
-          //   "payload" : JSON.stringify(payload),
-          //   "muteHttpExceptions": true,
-          // };
-          // // 用google apps script的Fetch功能去打api，就會把文字送出去
-          // var response = JSON.parse(UrlFetchApp.fetch(url, options).getContentText());
-        });
+        },task_scheduleTime());
     };
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
@@ -316,4 +290,32 @@ function Menu3() {
       });
     }
 };
+
+function task_scheduleTime() {
+  console.log("1235467489799fdghdfgh")
+  // bot.push(event.source.userId, msg);
+  client.pushMessage(event.source.userId, {
+    type: 'text',
+    text: msg,
+  })
+  //準備接Line的messaging api
+  // var url = "https://api.line.me/v2/bot/message/push";
+  // var payload= {
+  //     "to": event.source.userId,
+  //     //to：要傳送的個人的ID
+  //     "messages": [
+  //     { "type": "text",
+  //       "text": msg,}]
+  // };
+  // var options = {
+  //   "method": "post",
+  //   "headers": {
+  //     "content-Type": "application/json",
+  //     "Authorization": `Bearer { ${process.env.CHANNEL_ACCESS_TOKEN } }`},
+  //   "payload" : JSON.stringify(payload),
+  //   "muteHttpExceptions": true,
+  // };
+  // // 用google apps script的Fetch功能去打api，就會把文字送出去
+  // var response = JSON.parse(UrlFetchApp.fetch(url, options).getContentText());
+}
 module.exports = Menu3;
