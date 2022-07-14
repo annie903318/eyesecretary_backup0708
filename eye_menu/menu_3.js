@@ -294,7 +294,7 @@ function Menu3() {
 function task_scheduleTime(userId) {
   console.log("1235467489799fdghdfgh")
   // bot.push(event.source.userId, msg);
-  client.pushMessage(userId, {
+  bot.push(userId, {
     type: 'text',
     text: msg,
   })
