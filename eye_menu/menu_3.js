@@ -86,6 +86,7 @@ function Menu3() {
                   }
 
                   pp.release();
+                  task_scheduleTime(event.source.userId,msg);
                   
                   return client.replyMessage(event.replyToken);
               });
@@ -96,7 +97,7 @@ function Menu3() {
               return client.replyMessage(event.replyToken, msg);
             }
           });
-        },task_scheduleTime(event.source.userId,msg));
+        });
     };
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
@@ -294,10 +295,7 @@ function Menu3() {
 function task_scheduleTime(userId) {
   console.log("1235467489799fdghdfgh")
   // bot.push(event.source.userId, msg);
-  bot.push(userId, {
-    type: 'text',
-    text: 'msg',
-  })
+  bot.push(userId, msg)
   //準備接Line的messaging api
   // var url = "https://api.line.me/v2/bot/message/push";
   // var payload= {
