@@ -87,7 +87,7 @@ function Menu3() {
 
                   pp.release();
                   
-                  return client.replyMessage(event.replyToken, msg);
+                  return client.replyMessage(event.replyToken);
               });
             }
             else{
@@ -291,12 +291,12 @@ function Menu3() {
     }
 };
 
-function task_scheduleTime(userId,msg) {
+function task_scheduleTime(userId) {
   console.log("1235467489799fdghdfgh")
   // bot.push(event.source.userId, msg);
   bot.push(userId, {
     type: 'text',
-    text: msg,
+    text: 'msg',
   })
   //準備接Line的messaging api
   // var url = "https://api.line.me/v2/bot/message/push";
