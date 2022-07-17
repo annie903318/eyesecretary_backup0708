@@ -323,9 +323,9 @@ function Menu3() {
               let date = new Date();
               let now_date = String(date.getDate()).padStart(2, '0') + String(date.getMonth() + 1).padStart(2, '0')  + date.getFullYear();
               // 現在小時
-              let now_hours = now_date.getHours();
+              let now_hours = date.getHours();
               // 現在分鐘
-              let now_minutes = now_date.getMinutes();
+              let now_minutes = date.getMinutes();
               //計算通知時間與現在時間的時間差
               let cntTime = 0;
               console.log('description',description);
