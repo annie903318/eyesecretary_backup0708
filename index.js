@@ -444,7 +444,7 @@ function handlePostEvent(event){
       //更新排程通知
       setTimeout(function(){
         ef3.Schedule_Msg(client, event, pool);
-      }, 20000); 
+      }, 10000); 
     }
     
   }

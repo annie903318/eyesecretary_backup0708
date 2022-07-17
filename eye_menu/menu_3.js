@@ -319,10 +319,12 @@ function Menu3() {
               noti_date = noti_date.split('T')[0];
               // 通知時間
               let noti_time = s.results[i].m_time;
+              let time1 = noti_date + ' ' + noti_time+':00';
+              time1 = time1.replace(/\-/g, "/");
+              time1 = new Date(time1);
+              console.log(time1);
               // 現在日期
               let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
-              let time1 = new Date(noti_date + ' ' + noti_time);
-              console.log(time1);
               // date = date.split(" ");
               // let now_date = date[0].replace("/","").replace("/","");
               // // 現在小時
