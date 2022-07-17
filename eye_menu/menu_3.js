@@ -329,12 +329,13 @@ function Menu3() {
               //計算通知時間與現在時間的時間差
               let cntTime = parseInt(date1 - date);
               console.log(cntTime);
-              //新增排程
-              let id = i;
-              id = setTimeout(function(){
-                bot.push(event.source.userId, description);
-              }, cntTime);
-              
+              if(cntTime>0){
+                //新增排程
+                let id = i;
+                id = setTimeout(function(){
+                  bot.push(event.source.userId, description);
+                }, cntTime);
+              }              
             }
             
             pp.release();
