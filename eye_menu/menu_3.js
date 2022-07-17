@@ -296,12 +296,11 @@ function Menu3() {
           // 拆解JSON資料
           let count_s = JSON.parse(JSON.stringify(count_results));
           // 抓取使用者全部的事項          
-          let sql = `SELECT * FROM notes WHERE userid = '${event.source.userId}'`;
+          let sql = `SELECT id, description, m_date, m_time FROM notes WHERE userid = '${event.source.userId}'`;
           
           pp.query(sql, function(err, result){
             // 存取資料用，將資料轉換成JSON
             let results = { 'results': (result) ? result.rows : null};
-            console.log('all notes',results);
             // 拆解JSON資料
             let s = JSON.parse(JSON.stringify(results));
             // 抓取使用者目前事項總共幾筆
@@ -314,20 +313,22 @@ function Menu3() {
             for(i = 0; i < sum; i++){
               // 描述
               let description = s.results[i].description;
-              // 日期
+              // 通知日期
               let now_date = s.results[i].m_date;
               // 將日期格式化，轉成當天日期星期幾
-              let m_date = now_date.split('T')[0];
-              // 時間
-              let now_time = s.results[i].m_time;
+              let noti_date = now_date.split('T')[0];
+              // 通知時間
+              let noti_time = s.results[i].m_time;
+              // 現在時間
+              let now = new Date().getTime();
               console.log('description',description);
-              console.log('now_date',now_date);
-              console.log('m_date',m_date);
-              console.log('now_time',now_time);
+              console.log('noti_date',noti_date);
+              console.log('noti_time',noti_time);
+              console.log('now',now);
               //新增排程
               let id = `notify${i}`
               id = setTimeout(function(){
-                bot.push(event.source.userId, description);
+                // bot.push(event.source.userId, description);
               }, 5000);
               
             }
