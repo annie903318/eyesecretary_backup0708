@@ -331,19 +331,13 @@ function Menu3() {
               noti_date = noti_date.replace("-","").replace("-","");
               let noti_hours = noti_time.split(':')[0];
               let noti_minutes = noti_time.split(':')[1];
-              let cntTime = (noti_date - now_date)*86400;
-              console.log('description',description);
-              console.log('noti_date',noti_date);
-              console.log('noti_hours',noti_hours);
-              console.log('noti_minutes',noti_minutes);
-              console.log('now_date',now_date);
-              console.log('now_hours',now_hours);
-              console.log('now_minutes',now_minutes);
+              let cntTime = (noti_date - now_date)*86400 + (noti_hours - now_hours)*3600 + (noti_minutes - now_minutes)*60;
+
               //新增排程
               let id = `notify${i}`
               id = setTimeout(function(){
-                // bot.push(event.source.userId, description);
-              }, 5000);
+                bot.push(event.source.userId, description);
+              }, cntTime);
               
             }
             
