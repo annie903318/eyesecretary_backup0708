@@ -286,58 +286,52 @@ function Menu3() {
       });
     });
   }
-  this.Schedule_Msg = function(client, event, pool){
-    setTimeout(function(){
-      bot.push(event.source.userId, "msg");
-    }, 5000);
+  this.Schedule_Msg = function(client, event, pool,status){
+    //清除全部排程
+    clearTimeout();   
     
-    // pool.connect(async function(err, pp, done){
-    //   let sql = `SELECT COUNT(userid) AS count FROM notes WHERE userid = '${event.source.userId}'`;
-    //   pp.query(sql, function(err, result){
-    //       // 存取資料用，將資料轉換成JSON
-    //       let count_results = { 'results': (result) ? result.rows : null};
-    //       // 拆解JSON資料
-    //       let count_s = JSON.parse(JSON.stringify(count_results));
-    //       // 抓取使用者全部的事項
-          
-    //         let sql = `SELECT id, description, m_date, m_time FROM notes WHERE userid = '${event.source.userId}'`;
-    //         pp.query(sql, function(err, result){
-    //           // 存取資料用，將資料轉換成JSON
-    //           let results = { 'results': (result) ? result.rows : null};
-    //           // 拆解JSON資料
-    //           let s = JSON.parse(JSON.stringify(results));
-    //           // 宣告星期陣列
-    //           let today = new Array("日","一","二","三","四","五","六");
-    //           // 用來存放用
-    //           let columns = [];
-    //           for(i = 0; i < sum; i++){
-    //             // 描述
-    //             let description = s.results[i].description;
-    //             // 日期
-    //             let now_date = s.results[i].m_date;
-    //             // 將日期格式化，轉成當天日期星期幾
-    //             let m_date = now_date.split('T')[0];
-    //             let now_week = new Date(Date.parse(m_date.replace(/-/g, '/')));
-    //             now_week = today[now_week.getDay()];
-    //             // 時間，判斷上午或下午
-    //             let now_time = s.results[i].m_time;
-    //             let a = now_time.split(':');
-    //             if(a[0] >= 0 && a[0] <= 11){
-    //               now_time = '上午 ' + now_time;
-    //             }
-    //             else if(a[0] >= 12 && a[0] <= 23){
-    //               now_time = '下午 ' + now_time;
-    //             }
-
+    //找尋全部的提醒事項並一一新增通知
+    pool.connect(async function(err, pp, done){
+      let sql = `SELECT COUNT(userid) AS count FROM notes WHERE userid = '${event.source.userId}'`;
+      pp.query(sql, function(err, result){
+          // 存取資料用，將資料轉換成JSON
+          let count_results = { 'results': (result) ? result.rows : null};
+          // 拆解JSON資料
+          let count_s = JSON.parse(JSON.stringify(count_results));
+          // 抓取使用者全部的事項          
+            let sql = `SELECT id, description, m_date, m_time FROM notes WHERE userid = '${event.source.userId}'`;
+            pp.query(sql, function(err, result){
+              // 存取資料用，將資料轉換成JSON
+              let results = { 'results': (result) ? result.rows : null};
+              // 拆解JSON資料
+              let s = JSON.parse(JSON.stringify(results));
+              for(i = 0; i < sum; i++){
+                // 描述
+                let description = s.results[i].description;
+                // 日期
+                let now_date = s.results[i].m_date;
+                // 將日期格式化，轉成當天日期星期幾
+                let m_date = now_date.split('T')[0];
+                let now_week = new Date(Date.parse(m_date.replace(/-/g, '/')));
+                now_week = today[now_week.getDay()];
+                // 時間
+                let now_time = s.results[i].m_time;
+                bot.reply(description);
+                bot.reply(now_date);
+                bot.reply(m_date);
+                bot.reply(now_time);
+                //新增排程
+                // setTimeout(function(){
+                //   bot.push(event.source.userId, "msg");
+                // }, 5000);
                 
-    //           }
+              }
               
-    //           pp.release();
-    //           return client.replyMessage(event.replyToken, msg);
-    //         });
-    //       }
-    //   );
-    // });
+              pp.release();
+            });
+          }
+      );
+    });
   };
 };
 module.exports = Menu3; 

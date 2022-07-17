@@ -438,6 +438,7 @@ function handlePostEvent(event){
     else if(_data.type == 3){
       // 完成、刪除提醒事項
       ef3.Delete_Msg(client, event, pool, _data.m_id, _data.status);
+      ef3.Schedule_Msg(client, event, pool);
     }
     
   }
