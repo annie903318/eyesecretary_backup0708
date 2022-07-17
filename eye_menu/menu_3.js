@@ -302,6 +302,8 @@ function Menu3() {
               let results = { 'results': (result) ? result.rows : null};
               // 拆解JSON資料
               let s = JSON.parse(JSON.stringify(results));
+              // 抓取使用者目前事項總共幾筆
+              let sum = count_s.results[0].count;
               //清除全部排程
               for(x = 0; x < sum; x++){
                 clearTimeout(`notify${x}`);  
