@@ -288,7 +288,7 @@ function Menu3() {
   }
   this.Schedule_Msg = function(client, event, pool,status){
     //清除全部排程
-    clearTimeout();   
+    // clearTimeout();   
     setTimeout(function(){
       bot.push(event.source.userId, 8888);
     }, 5000);
