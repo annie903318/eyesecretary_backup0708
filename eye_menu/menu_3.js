@@ -290,7 +290,7 @@ function Menu3() {
     //清除全部排程
     // clearTimeout();   
     setTimeout(function(){
-      bot.push(event.source.userId, 8888);
+      bot.push(event.source.userId, "8888");
     }, 5000);
     
     // //找尋全部的提醒事項並一一新增通知
