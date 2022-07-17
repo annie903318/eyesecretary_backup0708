@@ -320,7 +320,7 @@ function Menu3() {
               // 通知時間
               let noti_time = s.results[i].m_time;
               // 現在時間
-              let now = new Date().getTime();
+              let now = new Date().getDay();
               console.log('description',description);
               console.log('noti_date',noti_date);
               console.log('noti_time',noti_time);
