@@ -315,35 +315,24 @@ function Menu3() {
               let description = s.results[i].description;
               // 通知日期
               let noti_date = s.results[i].m_date;
-              // 將日期格式化，轉成當天日期星期幾
+              // 將日期格式化
               noti_date = noti_date.split('T')[0];
               // 通知時間
               let noti_time = s.results[i].m_time;
               let time1 = noti_date + ' ' + noti_time+':00';
               time1 = time1.replace(/\-/g, "/");
               let date1 = new Date(time1);
-              console.log(time1);
               console.log(date1);
               // 現在日期
               let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
               date = new Date(date);
-              // date = date.split(" ");
-              // let now_date = date[0].replace("/","").replace("/","");
-              // // 現在小時
-              // let now_hours = date[1].split(":")[0];
-              // // 現在分鐘
-              // let now_minutes = date[1].split(":")[1];
-              //計算通知時間與現在時間的時間差秒數
-              // noti_date = noti_date.replace("-","").replace("-","");
-              // let noti_hours = noti_time.split(':')[0];
-              // let noti_minutes = noti_time.split(':')[1];
-              // let cntTime = (parseInt(noti_date) - parseInt(now_date))*86400 + (parseInt(noti_hours) - parseInt(now_hours))*3600 + (parseInt(noti_minutes) - parseInt(now_minutes))*60;
-              let cntTime = parseInt(date - date1);
+              //計算通知時間與現在時間的時間差
+              let cntTime = parseInt(date - date1)/1000; //轉換成秒數
               console.log(cntTime);
               //新增排程
               let id = `notify${i}`
               id = setTimeout(function(){
-                // bot.push(event.source.userId, description);
+                bot.push(event.source.userId, description);
               }, cntTime);
               
             }
