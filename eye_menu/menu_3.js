@@ -320,12 +320,12 @@ function Menu3() {
               // 通知時間
               let noti_time = s.results[i].m_time;
               // 現在日期
-              let date = new Date().toLocaleString({timeZone: 'Asia/Taipei'});
+              let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
               let now_date = date.split(" ")[0].replace("/","").replace("/","");
               // 現在小時
-              // let now_hours = date.getHours();
+              let now_hours = date.getHours();
               // 現在分鐘
-              // let now_minutes = date.getMinutes();
+              let now_minutes = date.getMinutes();
               //計算通知時間與現在時間的時間差秒數
               noti_date = noti_date.replace("-","").replace("-","");
               let noti_hours = noti_time.split(':')[0];
