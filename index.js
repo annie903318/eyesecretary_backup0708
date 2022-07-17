@@ -430,7 +430,9 @@ function handlePostEvent(event){
       // 紀錄
       ef3.Record_Msg(client, event, pool);
       //更新排程通知
-      ef3.Schedule_Msg(client, event, pool);     
+      setTimeout(function(){
+        ef3.Schedule_Msg(client, event, pool);
+      }, 3000);      
     }
     else if(_data.type == 2){
       // 查看
@@ -440,7 +442,9 @@ function handlePostEvent(event){
       // 完成、刪除提醒事項
       ef3.Delete_Msg(client, event, pool, _data.m_id, _data.status);
       //更新排程通知
-      ef3.Schedule_Msg(client, event, pool);
+      setTimeout(function(){
+        ef3.Schedule_Msg(client, event, pool);
+      }, 3000); 
     }
     
   }
