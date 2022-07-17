@@ -287,7 +287,10 @@ function Menu3() {
     });
   }
   this.Schedule_Msg = function(client, event, pool){
-    bot.push(event.source.userId, "msg");
+    setTimeout(function(){
+      bot.push(event.source.userId, "msg");
+    }, 5000);
+    
     // pool.connect(async function(err, pp, done){
     //   let sql = `SELECT COUNT(userid) AS count FROM notes WHERE userid = '${event.source.userId}'`;
     //   pp.query(sql, function(err, result){
