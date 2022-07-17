@@ -321,17 +321,20 @@ function Menu3() {
               let noti_time = s.results[i].m_time;
               // 現在日期
               let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
-              date = date.split(" ");
-              let now_date = date[0].replace("/","").replace("/","");
-              // 現在小時
-              let now_hours = date[1].split(":")[0];
-              // 現在分鐘
-              let now_minutes = date[1].split(":")[1];
+              let time1 = new Date(noti_date + ' ' + noti_time);
+              console.log(time1);
+              // date = date.split(" ");
+              // let now_date = date[0].replace("/","").replace("/","");
+              // // 現在小時
+              // let now_hours = date[1].split(":")[0];
+              // // 現在分鐘
+              // let now_minutes = date[1].split(":")[1];
               //計算通知時間與現在時間的時間差秒數
-              noti_date = noti_date.replace("-","").replace("-","");
-              let noti_hours = noti_time.split(':')[0];
-              let noti_minutes = noti_time.split(':')[1];
-              let cntTime = (parseInt(noti_date) - parseInt(now_date))*86400 + (parseInt(noti_hours) - parseInt(now_hours))*3600 + (parseInt(noti_minutes) - parseInt(now_minutes))*60;
+              // noti_date = noti_date.replace("-","").replace("-","");
+              // let noti_hours = noti_time.split(':')[0];
+              // let noti_minutes = noti_time.split(':')[1];
+              // let cntTime = (parseInt(noti_date) - parseInt(now_date))*86400 + (parseInt(noti_hours) - parseInt(now_hours))*3600 + (parseInt(noti_minutes) - parseInt(now_minutes))*60;
+              let cntTime = parseInt(date - time1);
               console.log(cntTime);
               //新增排程
               let id = `notify${i}`
