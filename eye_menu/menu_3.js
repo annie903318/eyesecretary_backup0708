@@ -332,11 +332,11 @@ function Menu3() {
               let noti_hours = noti_time.split(':')[0];
               let noti_minutes = noti_time.split(':')[1];
               let cntTime = (noti_date - now_date)*86400 + (noti_hours - now_hours)*3600 + (noti_minutes - now_minutes)*60;
-
+              console.log(cntTime);
               //新增排程
               let id = `notify${i}`
               id = setTimeout(function(){
-                bot.push(event.source.userId, description);
+                // bot.push(event.source.userId, description);
               }, cntTime);
               
             }
