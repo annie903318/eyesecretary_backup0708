@@ -86,9 +86,7 @@ function Menu3() {
       });
   };
   this.Schedule_Msg = function(client, event, pool){
-    console.log("client",client);
-    console.log("event",event);
-    console.log("pool",pool);
+    client.pushMessage(event.source.userId, "msg");
     // pool.connect(async function(err, pp, done){
     //   let sql = `SELECT COUNT(userid) AS count FROM notes WHERE userid = '${event.source.userId}'`;
     //   pp.query(sql, function(err, result){
