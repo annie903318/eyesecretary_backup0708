@@ -97,7 +97,10 @@ function Menu3() {
             }
           });
         });
-    },console.log(66666);
+    };
+    this.Record_Msg = function(client, event, pool){
+      
+    };
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
         // 使用者狀態初始化
