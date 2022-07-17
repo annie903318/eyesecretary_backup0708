@@ -429,7 +429,7 @@ function handlePostEvent(event){
     else if(_data.type == 1){
       // 紀錄
       ef3.Record_Msg(client, event, pool);
-      // ef3.schedule_Msg(client, event, pool);
+      ef3.Schedule_Msg(client, event, pool);
     }
     else if(_data.type == 2){
       // 查看
