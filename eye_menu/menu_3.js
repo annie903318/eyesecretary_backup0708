@@ -331,7 +331,7 @@ function Menu3() {
               noti_date = noti_date.replace("-","").replace("-","");
               let noti_hours = noti_time.split(':')[0];
               let noti_minutes = noti_time.split(':')[1];
-              let cntTime = (int(noti_date) - int(now_date))*86400 + (int(noti_hours) - int(now_hours))*3600 + (int(noti_minutes) - int(now_minutes))*60;
+              let cntTime = (parseInt(noti_date) - parseInt(now_date))*86400 + (parseInt(noti_hours) - parseInt(now_hours))*3600 + (parseInt(noti_minutes) - parseInt(now_minutes))*60;
               console.log(cntTime);
               //新增排程
               let id = `notify${i}`
