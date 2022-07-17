@@ -314,17 +314,26 @@ function Menu3() {
               // 描述
               let description = s.results[i].description;
               // 通知日期
-              let now_date = s.results[i].m_date;
+              let noti_date = s.results[i].m_date;
               // 將日期格式化，轉成當天日期星期幾
-              let noti_date = now_date.split('T')[0];
+              noti_date = now_date.split('T')[0];
               // 通知時間
               let noti_time = s.results[i].m_time;
-              // 現在時間
-              let now = new Date().getDay();
+              // 現在日期
+              let now_date = new Date();
+              now_date = String(date.getDate()).padStart(2, '0') + String(date.getMonth() + 1).padStart(2, '0')  + date.getFullYear();
+              // 現在小時
+              let now_hours = now_date.getHours();
+              // 現在分鐘
+              let now_minutes = now_date.getMinutes();
+              //計算通知時間與現在時間的時間差
+              let cntTime = 0;
               console.log('description',description);
               console.log('noti_date',noti_date);
               console.log('noti_time',noti_time);
-              console.log('now',now);
+              console.log('now_date',now_date);
+              console.log('now_hours',now_hours);
+              console.log('now_minutes',now_minutes);
               //新增排程
               let id = `notify${i}`
               id = setTimeout(function(){
