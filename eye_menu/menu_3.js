@@ -316,10 +316,10 @@ function Menu3() {
                 now_week = today[now_week.getDay()];
                 // 時間
                 let now_time = s.results[i].m_time;
-                bot.reply(description);
-                bot.reply(now_date);
-                bot.reply(m_date);
-                bot.reply(now_time);
+                client.replyMessage(description);
+                client.replyMessage(now_date);
+                client.replyMessage(m_date);
+                client.replyMessage(now_time);
                 //新增排程
                 // setTimeout(function(){
                 //   bot.push(event.source.userId, "msg");
