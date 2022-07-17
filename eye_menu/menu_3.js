@@ -96,8 +96,8 @@ function Menu3() {
               return client.replyMessage(event.replyToken, msg);
             }
           });
-        },console.log(66666));
-    };
+        });
+    },console.log(66666);
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
         // 使用者狀態初始化
