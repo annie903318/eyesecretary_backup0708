@@ -306,9 +306,8 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
-            var cl = setTimeout(";");
-            for(x = 0; x < cl; x++){
-              clearTimeout(x);  
+            for(x = 0; x < sum; x++){
+              clearTimeout(`notify${x}`);  
             }
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
@@ -331,9 +330,11 @@ function Menu3() {
               let cntTime = parseInt(date1 - date);
               console.log(cntTime);
               //新增排程
-              setTimeout(function(){
+              let id = `notify${i}`;
+              id = setTimeout(function(){
                 bot.push(event.source.userId, description);
               }, cntTime);
+              
             }
             
             pp.release();
