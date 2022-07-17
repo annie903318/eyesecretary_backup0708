@@ -88,7 +88,7 @@ function Menu3() {
                   pp.release();
                                     
                   return client.replyMessage(event.replyToken);
-              },bot.push(event.source.userId,'wwww'));
+              },console.log("1235467489799fdghdfgh"));
             }
             else{
               let msg = { type: 'text', text: '提醒事項已達到上限了哦！' };
