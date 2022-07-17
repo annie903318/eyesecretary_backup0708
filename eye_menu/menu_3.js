@@ -320,8 +320,8 @@ function Menu3() {
               // 通知時間
               let noti_time = s.results[i].m_time;
               // 現在日期
-              let now_date = new Date();
-              now_date = String(date.getDate()).padStart(2, '0') + String(date.getMonth() + 1).padStart(2, '0')  + date.getFullYear();
+              let date = new Date();
+              let now_date = String(date.getDate()).padStart(2, '0') + String(date.getMonth() + 1).padStart(2, '0')  + date.getFullYear();
               // 現在小時
               let now_hours = now_date.getHours();
               // 現在分鐘
