@@ -327,7 +327,7 @@ function Menu3() {
               let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
               date = new Date(date);
               //計算通知時間與現在時間的時間差
-              let cntTime = parseInt(date - date1)/1000; //轉換成秒數
+              let cntTime = parseInt(date1 - date)/1000; //轉換成秒數
               console.log(cntTime);
               //新增排程
               let id = `notify${i}`
