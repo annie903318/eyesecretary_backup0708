@@ -98,8 +98,8 @@ function Menu3() {
           });
         });
     };
-    this.Record_Msg = function(client, event, pool){
-      
+    this.schedule_Msg = function(client, event, pool){
+      console.log(123486465);
     };
     this.Cancel_Msg = function(client, event, pool){
       pool.connect(async function(err, pp, done){
