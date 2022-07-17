@@ -321,8 +321,8 @@ function Menu3() {
               let noti_time = s.results[i].m_time;
               let time1 = noti_date + ' ' + noti_time+':00';
               time1 = time1.replace(/\-/g, "/");
-              time1 = new Date(time1);
-              console.log(time1);
+              let date1 = new Date(time1);
+              console.log(date1);
               // 現在日期
               let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
               // date = date.split(" ");
@@ -336,7 +336,7 @@ function Menu3() {
               // let noti_hours = noti_time.split(':')[0];
               // let noti_minutes = noti_time.split(':')[1];
               // let cntTime = (parseInt(noti_date) - parseInt(now_date))*86400 + (parseInt(noti_hours) - parseInt(now_hours))*3600 + (parseInt(noti_minutes) - parseInt(now_minutes))*60;
-              let cntTime = parseInt(date - time1);
+              let cntTime = parseInt(date - date1);
               console.log(cntTime);
               //新增排程
               let id = `notify${i}`
