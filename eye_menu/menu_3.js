@@ -287,55 +287,53 @@ function Menu3() {
     });
   }
   this.Schedule_Msg = function(client, event, pool,status){
-    //清除全部排程
-    // clearTimeout();   
-    bot.push(event.source.userId, "8888");
-    // setTimeout(function(){
-    //   bot.push(event.source.userId, "8888");
-    // }, 5000);
-    
-    // //找尋全部的提醒事項並一一新增通知
-    // pool.connect(async function(err, pp, done){
-    //   let sql = `SELECT COUNT(userid) AS count FROM notes WHERE userid = '${event.source.userId}'`;
-    //   pp.query(sql, function(err, result){
-    //       // 存取資料用，將資料轉換成JSON
-    //       let count_results = { 'results': (result) ? result.rows : null};
-    //       // 拆解JSON資料
-    //       let count_s = JSON.parse(JSON.stringify(count_results));
-    //       // 抓取使用者全部的事項          
-    //         let sql = `SELECT id, description, m_date, m_time FROM notes WHERE userid = '${event.source.userId}'`;
-    //         pp.query(sql, function(err, result){
-    //           // 存取資料用，將資料轉換成JSON
-    //           let results = { 'results': (result) ? result.rows : null};
-    //           // 拆解JSON資料
-    //           let s = JSON.parse(JSON.stringify(results));
-    //           for(i = 0; i < sum; i++){
-    //             // 描述
-    //             let description = s.results[i].description;
-    //             // 日期
-    //             let now_date = s.results[i].m_date;
-    //             // 將日期格式化，轉成當天日期星期幾
-    //             let m_date = now_date.split('T')[0];
-    //             let now_week = new Date(Date.parse(m_date.replace(/-/g, '/')));
-    //             now_week = today[now_week.getDay()];
-    //             // 時間
-    //             let now_time = s.results[i].m_time;
-    //             // console.log(description);
-    //             // console.log(now_date);
-    //             // console.loge(m_date);
-    //             // console.log(now_time);
-    //             //新增排程
-    //             setTimeout(function(){
-    //               bot.push(event.source.userId, description);
-    //             }, 5000);
+    //從資料庫撈提醒事項
+    pool.connect(async function(err, pp, done){
+      let sql = `SELECT COUNT(userid) AS count FROM notes WHERE userid = '${event.source.userId}'`;
+      pp.query(sql, function(err, result){
+          // 存取資料用，將資料轉換成JSON
+          let count_results = { 'results': (result) ? result.rows : null};
+          // 拆解JSON資料
+          let count_s = JSON.parse(JSON.stringify(count_results));
+          // 抓取使用者全部的事項          
+            let sql = `SELECT id, description, m_date, m_time FROM notes WHERE userid = '${event.source.userId}'`;
+            pp.query(sql, function(err, result){
+              // 存取資料用，將資料轉換成JSON
+              let results = { 'results': (result) ? result.rows : null};
+              // 拆解JSON資料
+              let s = JSON.parse(JSON.stringify(results));
+              //清除全部排程
+              for(x = 0; x < sum; x++){
+                clearTimeout(`notify${x}`);  
+              }
+              //找尋全部的提醒事項並一一新增通知
+              for(i = 0; i < sum; i++){
+                // 描述
+                let description = s.results[i].description;
+                // 日期
+                let now_date = s.results[i].m_date;
+                // 將日期格式化，轉成當天日期星期幾
+                let m_date = now_date.split('T')[0];
+                // let now_week = new Date(Date.parse(m_date.replace(/-/g, '/')));
+                // now_week = today[now_week.getDay()];
+                // 時間
+                let now_time = s.results[i].m_time;
+                console.log('description',description);
+                // console.log(now_date);
+                // console.loge(m_date);
+                // console.log(now_time);
+                //新增排程
+                // setTimeout(function(){
+                //   bot.push(event.source.userId, description);
+                // }, 5000);
                 
-    //           }
+              }
               
-    //           pp.release();
-    //         });
-    //       }
-    //   );
-    // });
+              pp.release();
+            });
+          }
+      );
+    });
   };
 };
 module.exports = Menu3; 
