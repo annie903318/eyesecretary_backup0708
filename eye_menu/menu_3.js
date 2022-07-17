@@ -326,6 +326,7 @@ function Menu3() {
               console.log(date1);
               // 現在日期
               let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
+              date = new Date(date);
               // date = date.split(" ");
               // let now_date = date[0].replace("/","").replace("/","");
               // // 現在小時
@@ -337,7 +338,7 @@ function Menu3() {
               // let noti_hours = noti_time.split(':')[0];
               // let noti_minutes = noti_time.split(':')[1];
               // let cntTime = (parseInt(noti_date) - parseInt(now_date))*86400 + (parseInt(noti_hours) - parseInt(now_hours))*3600 + (parseInt(noti_minutes) - parseInt(now_minutes))*60;
-              let cntTime = parseInt(date - time1);
+              let cntTime = parseInt(date - date1);
               console.log(cntTime);
               //新增排程
               let id = `notify${i}`
