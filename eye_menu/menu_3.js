@@ -316,7 +316,7 @@ function Menu3() {
               // 通知日期
               let noti_date = s.results[i].m_date;
               // 將日期格式化，轉成當天日期星期幾
-              noti_date = now_date.split('T')[0];
+              noti_date = noti_date.split('T')[0];
               // 通知時間
               let noti_time = s.results[i].m_time;
               // 現在日期
