@@ -320,7 +320,7 @@ function Menu3() {
                 // console.log(now_date);
                 // console.loge(m_date);
                 // console.log(now_time);
-                新增排程
+                //新增排程
                 setTimeout(function(){
                   bot.push(event.source.userId, description);
                 }, 5000);
