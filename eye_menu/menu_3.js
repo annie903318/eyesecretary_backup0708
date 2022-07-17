@@ -321,11 +321,12 @@ function Menu3() {
               let noti_time = s.results[i].m_time;
               // 現在日期
               let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
-              let now_date = date.split(" ")[0].replace("/","").replace("/","");
+              date = date.split(" ");
+              let now_date = date[0].replace("/","").replace("/","");
               // 現在小時
-              // let now_hours = date.getHours();
+              let now_hours = date[1].split(":")[0];
               // 現在分鐘
-              // let now_minutes = date.getMinutes();
+              let now_minutes = date[1].split(":")[1];
               //計算通知時間與現在時間的時間差秒數
               noti_date = noti_date.replace("-","").replace("-","");
               let noti_hours = noti_time.split(':')[0];
@@ -335,9 +336,9 @@ function Menu3() {
               console.log('noti_date',noti_date);
               console.log('noti_hours',noti_hours);
               console.log('noti_minutes',noti_minutes);
-              console.log('now_date',date);
-              // console.log('now_hours',now_hours);
-              // console.log('now_minutes',now_minutes);
+              console.log('now_date',now_date);
+              console.log('now_hours',now_hours);
+              console.log('now_minutes',now_minutes);
               //新增排程
               let id = `notify${i}`
               id = setTimeout(function(){
