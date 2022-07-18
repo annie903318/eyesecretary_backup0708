@@ -307,8 +307,10 @@ function Menu3() {
             let sum = count_s.results[0].count;
             //清除全部排程
             for (x = 0 ; x < timeouts.length ; x++) {
-                clearTimeout(timeouts[x]); 
+              timeouts = timeouts.splice(x,1);
+              clearTimeout(timeouts[x]); 
             }
+            console.log(timeouts);
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
               // 描述
@@ -336,7 +338,8 @@ function Menu3() {
                   // client.replyMessage(event.source.userId, description);
                 }, cntTime)
                 timeouts.push(timerid);
-              }              
+              }
+              console.log(timeouts);            
             }
             
             pp.release();
