@@ -335,9 +335,9 @@ function Menu3() {
               console.log(cntTime);
               if(cntTime>0){
                 //新增排程
-                let id = i;
-                id = setTimeout(function(){
-                  bot.push(event.source.userId, description);
+                setTimeout(function(){
+                  // bot.push(event.source.userId, description);
+                  client.replyMessage(event.source.userId, description);
                 }, cntTime);
               }              
             }
