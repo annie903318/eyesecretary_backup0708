@@ -308,6 +308,7 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
+            console.log("Timeout",this.timeouts);
             for (x = 0 ; x < (this.timeouts).length ; x++) {
                 clearTimeout(this.timeouts[x]); 
             }
@@ -333,7 +334,7 @@ function Menu3() {
               console.log(cntTime);
               if(cntTime>0){
                 //新增排程
-               
+                console.log("Timeout",this.timeouts);
                 this.timeouts.push(
                   setTimeout(function(){
                     console.log(description);
