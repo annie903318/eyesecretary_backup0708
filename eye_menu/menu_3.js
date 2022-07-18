@@ -327,7 +327,7 @@ function Menu3() {
               let date1 = new Date(time1);
               console.log('date1',typeof(date1));
               // 現在日期
-              let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
+              let date = new Date().toLocaleString({timeZone: 'Asia/Taipei',hour12: false});
               console.log('date',date);
               date = new Date(1000*date);
               console.log('date',date);
