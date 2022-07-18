@@ -307,9 +307,9 @@ function Menu3() {
             let sum = count_s.results[0].count;
             //清除全部排程
             for (x = 0 ; x < timeouts.length ; x++) {
-              timeouts.remove(timeouts[x]);
               clearTimeout(timeouts[x]); 
             }
+            timeouts = [];
             console.log(timeouts);
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
