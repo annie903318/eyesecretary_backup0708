@@ -329,6 +329,8 @@ function Menu3() {
               // 現在日期
               let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei',hour12: false});
               date = new Date(date);
+              console.log('date',date);
+              console.log('date',typeof(date));
               //計算通知時間與現在時間的時間差
               let cntTime = parseInt(date1 - date);
               console.log('cntTime',cntTime);
