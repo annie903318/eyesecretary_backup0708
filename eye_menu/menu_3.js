@@ -306,11 +306,9 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
-            console.log("Timeout",timeouts);
-            for (x = 0 ; x < sum ; x++) {
+            for (x = 0 ; x < timeouts.length ; x++) {
                 clearTimeout(timeouts[x]); 
             }
-            console.log("Timeout",timeouts);
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
               // 描述
@@ -324,14 +322,12 @@ function Menu3() {
               let time1 = noti_date + ' ' + noti_time+':00';
               time1 = time1.replace(/\-/g, "/");
               let date1 = new Date(time1);
-              console.log('date1',date1);
               // 現在日期
               let date = new Date().toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
               //把字串轉成日期型態
               date = Date.parse(date);
               //計算通知時間與現在時間的時間差
               let cntTime = parseInt(date1 - date);
-              console.log('cntTime',cntTime);
               if(cntTime>0){
                 //新增排程
                 let timerid = i;
@@ -340,7 +336,6 @@ function Menu3() {
                   // client.replyMessage(event.source.userId, description);
                 }, cntTime)
                 timeouts.push(timerid);
-                console.log("Timeout",timeouts);
               }              
             }
             
