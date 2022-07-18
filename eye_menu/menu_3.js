@@ -325,9 +325,10 @@ function Menu3() {
               let time1 = noti_date + ' ' + noti_time+':00';
               time1 = time1.replace(/\-/g, "/");
               let date1 = new Date(time1);
+              console.log('date1',date1);
               console.log('date1',typeof(date1));
               // 現在日期
-              let date = new Date().toLocaleString({timeZone: 'Asia/Taipei',hour12: false});
+              let date = new Date().toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
               console.log('date',date);
               date = new Date(date);
               console.log('date',date);
