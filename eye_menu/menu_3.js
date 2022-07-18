@@ -286,7 +286,7 @@ function Menu3() {
       });
     });
   }
-  this.Schedule_Msg = function(client, event, pool,status,timeouts){
+  this.Schedule_Msg = function(client, event, pool,timeouts){
     //從資料庫撈提醒事項
     pool.connect(async function(err, pp, done){
       let sql = `SELECT COUNT(userid) AS count FROM notes WHERE userid = '${event.source.userId}'`;
