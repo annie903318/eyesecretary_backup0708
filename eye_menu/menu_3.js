@@ -309,9 +309,13 @@ function Menu3() {
             // for(x = 0; x < sum; x++){
             //   clearTimeout(x);  
             // }
-            var ttl_timeout = setTimeout(null,0);
-            while (ttl_timeout--) {
-                window.clearTimeout(id);
+            // var ttl_timeout = setTimeout(null,0);
+            // while (ttl_timeout--) {
+            //     clearTimeout(id);
+            // }
+            let highestTimeoutId = setTimeout(";");
+            for (x = 0 ; x < highestTimeoutId ; x++) {
+                clearTimeout(x); 
             }
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
@@ -336,8 +340,9 @@ function Menu3() {
               if(cntTime>0){
                 //新增排程
                 setTimeout(function(){
+                  console.log(description);
                   // bot.push(event.source.userId, description);
-                  client.replyMessage(event.source.userId, description);
+                  // client.replyMessage(event.source.userId, description);
                 }, cntTime);
               }              
             }
