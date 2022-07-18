@@ -28,6 +28,8 @@ const date = new Date();
 const today = date.getFullYear() + '/' + (date.getMonth()+1) + '/' + date.getDate();
 // create LINE SDK client
 const client = new line.Client(config);
+//事項排程記錄
+let timeouts = [];
 
 const line_notify = require('./line-notify');
 const path = require('path');
@@ -431,7 +433,7 @@ function handlePostEvent(event){
       ef3.Record_Msg(client, event, pool);
       //更新排程通知
       setTimeout(function(){
-        ef3.Schedule_Msg(client, event, pool);
+        ef3.Schedule_Msg(client, event, pool,timeouts);
       }, 25000);      
     }
     else if(_data.type == 2){
@@ -443,8 +445,8 @@ function handlePostEvent(event){
       ef3.Delete_Msg(client, event, pool, _data.m_id, _data.status);
       //更新排程通知
       setTimeout(function(){
-        ef3.Schedule_Msg(client, event, pool);
-      }, 10000); 
+        ef3.Schedule_Msg(client, event, pool,timeouts);
+      }, 5000); 
     }
     
   }

@@ -286,9 +286,7 @@ function Menu3() {
       });
     });
   }
-  //事項排程記錄
-  let timeouts = [];
-  this.Schedule_Msg = function(client, event, pool,status){
+  this.Schedule_Msg = function(client, event, pool,status,timeouts){
     //從資料庫撈提醒事項
     pool.connect(async function(err, pp, done){
       let sql = `SELECT COUNT(userid) AS count FROM notes WHERE userid = '${event.source.userId}'`;
@@ -312,6 +310,7 @@ function Menu3() {
             for (x = 0 ; x < timeouts.length ; x++) {
                 clearTimeout(timeouts[x]); 
             }
+            console.log("Timeout",timeouts);
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
               // 描述
