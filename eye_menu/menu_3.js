@@ -330,7 +330,7 @@ function Menu3() {
               // 現在日期
               let date = new Date().toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
               console.log('date',date);
-              date = new Date(date);
+              date = Date.parse(date);
               console.log('date',date);
               console.log('date',typeof(date));
               //計算通知時間與現在時間的時間差
