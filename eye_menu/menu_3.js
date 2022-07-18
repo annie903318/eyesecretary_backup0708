@@ -326,19 +326,15 @@ function Menu3() {
               time1 = time1.replace(/\-/g, "/");
               let date1 = new Date(time1);
               console.log('date1',date1);
-              console.log('date1',typeof(date1));
               // 現在日期
               let date = new Date().toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
-              console.log('date',date);
+              //把字串轉成日期型態
               date = Date.parse(date);
-              console.log('date',date);
-              console.log('date',typeof(date));
               //計算通知時間與現在時間的時間差
               let cntTime = parseInt(date1 - date);
               console.log('cntTime',cntTime);
               if(cntTime>0){
                 //新增排程
-                console.log("Timeout",timeouts);
                 timeouts.push(
                   setTimeout(function(){
                     console.log(description);
@@ -346,7 +342,7 @@ function Menu3() {
                     // client.replyMessage(event.source.userId, description);
                   }, cntTime)
                 );
-                
+                console.log("Timeout",timeouts);
               }              
             }
             
