@@ -332,9 +332,11 @@ function Menu3() {
               if(cntTime>0){
                 //新增排程
                 let id = i;
+                console.log('id',id);
                 id = setTimeout(function(){
-                  bot.push(event.source.userId, description);
+                  // bot.push(event.source.userId, description);
                 }, cntTime);
+                console.log('id',id);
               }              
             }
             
