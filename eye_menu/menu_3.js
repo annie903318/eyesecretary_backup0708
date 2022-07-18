@@ -307,9 +307,8 @@ function Menu3() {
             let sum = count_s.results[0].count;
             //清除全部排程
             console.log("Timeout",timeouts);
-            for (x = 0 ; x < timeouts.length ; x++) {
-                console.log(`${x}`,timeouts[x]);
-                clearTimeout(timeouts[x]); 
+            for (x = 0 ; x < sum ; x++) {
+                clearTimeout(x); 
             }
             console.log("Timeout",timeouts);
             //找尋全部的提醒事項並一一新增通知
@@ -335,13 +334,13 @@ function Menu3() {
               console.log('cntTime',cntTime);
               if(cntTime>0){
                 //新增排程
-                timeouts.push(
-                  setTimeout(function(){
-                    console.log(description);
-                    // bot.push(event.source.userId, description);
-                    // client.replyMessage(event.source.userId, description);
-                  }, cntTime)
-                );
+                let timerid = i;
+                timerid = setTimeout(function(){
+                  console.log(description);
+                  // bot.push(event.source.userId, description);
+                  // client.replyMessage(event.source.userId, description);
+                }, cntTime)
+                timeouts.push(timerid);
                 console.log("Timeout",timeouts);
               }              
             }
