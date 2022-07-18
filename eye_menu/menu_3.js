@@ -306,11 +306,10 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
-            for (x = 0 ; x < sum ; x++) {
+            for (x = 0 ; x < timeouts.length ; x++) {
               clearTimeout(timeouts[x]); 
             }
-            timeouts = [];
-            console.log(timeouts);
+            timeouts = [];            
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
               // 描述
