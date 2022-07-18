@@ -308,6 +308,7 @@ function Menu3() {
             //清除全部排程
             console.log("Timeout",timeouts);
             for (x = 0 ; x < timeouts.length ; x++) {
+                console.log(`${x}`,timeouts[x]);
                 clearTimeout(timeouts[x]); 
             }
             console.log("Timeout",timeouts);
