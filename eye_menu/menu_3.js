@@ -307,7 +307,7 @@ function Menu3() {
             let sum = count_s.results[0].count;
             //清除全部排程
             for (x = 0 ; x < timeouts.length ; x++) {
-              timeouts = timeouts.splice(x,1);
+              timeouts.remove(timeouts[x]);
               clearTimeout(timeouts[x]); 
             }
             console.log(timeouts);
