@@ -306,7 +306,7 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
-            for (x = 0 ; x < timeouts.length ; x++) {
+            for (x = 0 ; x < sum ; x++) {
               clearTimeout(timeouts[x]); 
             }
             timeouts = [];
@@ -338,8 +338,7 @@ function Menu3() {
                   // client.replyMessage(event.source.userId, description);
                 }, cntTime)
                 timeouts.push(timerid);
-              }
-              console.log(timeouts);            
+              }      
             }
             
             pp.release();
