@@ -286,6 +286,8 @@ function Menu3() {
       });
     });
   }
+  //事項排程記錄
+  this.timeouts = [];
   this.Schedule_Msg = function(client, event, pool,status){
     //從資料庫撈提醒事項
     pool.connect(async function(err, pp, done){
@@ -306,16 +308,8 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
-            // for(x = 0; x < sum; x++){
-            //   clearTimeout(x);  
-            // }
-            // var ttl_timeout = setTimeout(null,0);
-            // while (ttl_timeout--) {
-            //     clearTimeout(id);
-            // }
-            let highestTimeoutId = setTimeout(";");
-            for (x = 0 ; x < highestTimeoutId ; x++) {
-                clearTimeout(x); 
+            for (x = 0 ; x < timeouts.length ; x++) {
+                clearTimeout(timeouts[x]); 
             }
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
@@ -339,11 +333,15 @@ function Menu3() {
               console.log(cntTime);
               if(cntTime>0){
                 //新增排程
-                setTimeout(function(){
-                  console.log(description);
-                  // bot.push(event.source.userId, description);
-                  // client.replyMessage(event.source.userId, description);
-                }, cntTime);
+               
+                timeouts.push(
+                  setTimeout(function(){
+                    console.log(description);
+                    // bot.push(event.source.userId, description);
+                    // client.replyMessage(event.source.userId, description);
+                  }, cntTime)
+                );
+                
               }              
             }
             
