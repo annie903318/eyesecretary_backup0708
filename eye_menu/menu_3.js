@@ -309,7 +309,7 @@ function Menu3() {
             // for(x = 0; x < sum; x++){
             //   clearTimeout(x);  
             // }
-            var ttl_timeout = window.setTimeout(null,0);
+            var ttl_timeout = setTimeout(null,0);
             while (ttl_timeout--) {
                 window.clearTimeout(id);
             }
