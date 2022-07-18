@@ -287,7 +287,7 @@ function Menu3() {
     });
   }
   //事項排程記錄
-  this.timeouts = [];
+  let timeouts = [];
   this.Schedule_Msg = function(client, event, pool,status){
     //從資料庫撈提醒事項
     pool.connect(async function(err, pp, done){
@@ -308,9 +308,9 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
-            console.log("Timeout",this.timeouts);
-            for (x = 0 ; x < (this.timeouts).length ; x++) {
-                clearTimeout(this.timeouts[x]); 
+            console.log("Timeout",timeouts);
+            for (x = 0 ; x < timeouts.length ; x++) {
+                clearTimeout(timeouts[x]); 
             }
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
@@ -334,8 +334,8 @@ function Menu3() {
               console.log(cntTime);
               if(cntTime>0){
                 //新增排程
-                console.log("Timeout",this.timeouts);
-                this.timeouts.push(
+                console.log("Timeout",timeouts);
+                timeouts.push(
                   setTimeout(function(){
                     console.log(description);
                     // bot.push(event.source.userId, description);
