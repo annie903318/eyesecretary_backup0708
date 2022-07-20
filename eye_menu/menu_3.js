@@ -306,10 +306,11 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
-            let timerid = setTimeout(function(){}, 0);
-            for (x = 0 ; x < sum ; x++) {
-              clearTimeout(timerid); 
-            }
+            sche.cancel();
+            // let timerid = setTimeout(function(){}, 0);
+            // for (x = 0 ; x < sum ; x++) {
+            //   clearTimeout(timerid); 
+            // }
             // timeouts = [];                
             // clearTimeout(timerid); 
 
@@ -331,16 +332,20 @@ function Menu3() {
               //把字串轉成日期型態
               date = Date.parse(date);
               //計算通知時間與現在時間的時間差
-              let cntTime = parseInt(date1 - date);
-              if(cntTime>0){
+              // let cntTime = parseInt(date1 - date);
+              // if(cntTime>0){
                 //新增排程
-                timerid = setTimeout(function(){
-                  console.log(description);
+                // timerid = setTimeout(function(){
+                  // console.log(description);
                   // bot.push(event.source.userId, description);
                   // client.replyMessage(event.source.userId, description);
-                }, cntTime)
+                // }, cntTime)
                 // timeouts.push(timerid);
-              }      
+              // } 
+              let execDate = date1;
+              let sche = schedule.scheduleJob(execDate, () => {
+                console.log(date1 + description);
+})     
             }
             
             pp.release();
