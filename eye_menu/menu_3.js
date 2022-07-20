@@ -306,7 +306,7 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程
-            sche.cancel();
+            // sche.cancel();
             // let timerid = setTimeout(function(){}, 0);
             // for (x = 0 ; x < sum ; x++) {
             //   clearTimeout(timerid); 
@@ -345,7 +345,7 @@ function Menu3() {
               let execDate = date1;
               let sche = schedule.scheduleJob(execDate, () => {
                 console.log(date1 + description);
-})     
+              })     
             }
             
             pp.release();
