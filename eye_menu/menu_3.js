@@ -286,6 +286,7 @@ function Menu3() {
       });
     });
   }
+  const schedule  = require('node-schedule');
   this.Schedule_Msg = function(client, event, pool,timeouts){
     //從資料庫撈提醒事項
     pool.connect(async function(err, pp, done){
@@ -344,7 +345,7 @@ function Menu3() {
               // } 
               let execDate = date1;
               let sche = schedule.scheduleJob(execDate, () => {
-                console.log(date1 + description);
+                console.log(date1 + ':' + description);
               })     
             }
             
