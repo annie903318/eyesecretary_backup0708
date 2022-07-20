@@ -344,7 +344,7 @@ function Menu3() {
                 // timeouts.push(timerid);
               // } 
               let execDate = date1;
-              let sche = schedule.scheduleJob(execDate, () => {
+              let sche = schedule.scheduleJob(execDate, function(){
                 console.log(date1 + ':' + description);
               })     
             }
