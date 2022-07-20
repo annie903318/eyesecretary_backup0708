@@ -333,7 +333,8 @@ function Menu3() {
                 //新增排程
                 let timerid = i;
                 timerid = setTimeout(function(){
-                  bot.push(event.source.userId, description);
+                  console.log(description);
+                  // bot.push(event.source.userId, description);
                   // client.replyMessage(event.source.userId, description);
                 }, cntTime)
                 timeouts.push(timerid);
