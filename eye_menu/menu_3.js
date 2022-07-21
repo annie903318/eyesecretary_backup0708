@@ -9,6 +9,8 @@ const bot = linebot({
     channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 });
 
+const schedule  = require('node-schedule');
+
 function Menu3() {
   this.Ask_Msg = function(){
     let date = new Date();
@@ -286,7 +288,6 @@ function Menu3() {
       });
     });
   }
-  const schedule  = require('node-schedule');
   this.Schedule_Msg = function(client, event, pool,timeouts){
     //從資料庫撈提醒事項
     pool.connect(async function(err, pp, done){
