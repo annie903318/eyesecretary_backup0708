@@ -330,6 +330,7 @@ function Menu3() {
               time1 = time1.replace(/\-/g, "/");
               let date1 = new Date(time1).toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
               date1 = Date.parse(date1);
+              console.log('date1:' + date1);
               // 現在日期
               let date = new Date().toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
               //把字串轉成日期型態
