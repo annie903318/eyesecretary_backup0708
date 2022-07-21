@@ -328,8 +328,7 @@ function Menu3() {
               let noti_time = s.results[i].m_time;
               let time1 = noti_date + ' ' + noti_time+':00';
               time1 = time1.replace(/\-/g, "/");
-              let date1 = new Date(time1).toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
-              date1 = Date.parse(date1);
+              let date1 = new Date(time1);
               console.log('date1:' + date1);
               // 現在日期
               let date = new Date().toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
