@@ -334,20 +334,21 @@ function Menu3() {
               //把字串轉成日期型態
               date = Date.parse(date);
               //計算通知時間與現在時間的時間差
-              // let cntTime = parseInt(date1 - date);
-              // if(cntTime>0){
+              let cntTime = parseInt(date1 - date);
+              if(cntTime>0){
                 //新增排程
+                let execDate = date1;
+                let sche = schedule.scheduleJob(date1, function(){
+                  console.log(date1 + ':' + description);
+                })   
                 // timerid = setTimeout(function(){
-                  // console.log(description);
-                  // bot.push(event.source.userId, description);
-                  // client.replyMessage(event.source.userId, description);
+                //   console.log(description);
+                //   bot.push(event.source.userId, description);
+                //   client.replyMessage(event.source.userId, description);
                 // }, cntTime)
                 // timeouts.push(timerid);
-              // } 
-              let execDate = date1;
-              let sche = schedule.scheduleJob('30 * * * * *', function(){
-                console.log(date1 + ':' + description);
-              })     
+              } 
+                
             }
             
             pp.release();
