@@ -338,7 +338,7 @@ function Menu3() {
               let cntTime = parseInt(date1 - date);
               if(cntTime>0){
                 //新增排程
-                let execDate = new Date(2022,6,25,0,3,00);
+                let execDate = new Date(2022,6,25,0,25,00);
                 let sche = schedule.scheduleJob(execDate, function(){
                   console.log(execDate + ':' + description);
                 })   
