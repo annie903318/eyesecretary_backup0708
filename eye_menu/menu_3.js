@@ -10,7 +10,8 @@ const bot = linebot({
 });
 
 const schedule  = require('node-schedule');
-
+// 宣告排成用
+const timerid = [];
 function Menu3() {
   this.Ask_Msg = function(){
     let date = new Date();
@@ -307,14 +308,10 @@ function Menu3() {
             let s = JSON.parse(JSON.stringify(results));
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
-            //清除全部排程
-            // sche.cancel();
-            // let timerid = setTimeout(function(){}, 0);
-            // for (x = 0 ; x < sum ; x++) {
-            //   clearTimeout(timerid); 
-            // }
-            // timeouts = [];                
-            // clearTimeout(timerid); 
+            //清除全部排程，提醒事項已經先刪除，所以需要使用'<='，以確保排成能夠清空
+            for (x = 0 ; x <= sum ; x++) {
+              clearTimeout(timerid[x]); 
+            }
 
             //找尋全部的提醒事項並一一新增通知
             for(i = 0; i < sum; i++){
@@ -328,30 +325,42 @@ function Menu3() {
               let noti_time = s.results[i].m_time;
               let time1 = noti_date + ' ' + noti_time+':00';
               time1 = time1.replace(/\-/g, "/");
+              //將time1改為date格式        
               let date1 = new Date(time1);
-              console.log('date1:' + date1);
               // 現在日期
               let date = new Date().toLocaleString('zh-TW',{timeZone: 'Asia/Taipei',hour12: false});
+              console.log('date:'+date);
               //把字串轉成日期型態
+              // 這邊也改成跟date相同的格式
+              date1 = Date.parse(date1);
               date = Date.parse(date);
               //計算通知時間與現在時間的時間差
               let cntTime = parseInt(date1 - date);
+              // console.log('time1:' + time1);
+              // console.log('date1:' + date1);
+              // console.log('date:'+date);
+              // console.log('cntTime:'+cntTime);
               if(cntTime>0){
                 //新增排程
-                let execDate = new Date(2022,6,25,0,25,00);
-                let sche = schedule.scheduleJob(execDate, function(){
-                  console.log(execDate + ':' + description);
-                })   
-                // timerid = setTimeout(function(){
-                //   console.log(description);
-                //   bot.push(event.source.userId, description);
-                //   client.replyMessage(event.source.userId, description);
-                // }, cntTime)
-                // timeouts.push(timerid);
+                // let execDate = new Date(2022,6,25,0,25,00);
+                let execDate = new Date(time1);
+                console.log(execDate);
+
+                // let sche = schedule.scheduleJob(execDate, function(){
+                //   console.log(execDate + ':' + description);
+                // })   
+
+                // setTimeout(function(){
+                //   console.log(execDate + ':' + description);
+                // }, cntTime); 
+                timerid[i] = setTimeout(function(){
+                  console.log('提醒事項：' + description);
+                  // 將提醒事項push到聊天室中
+                  // bot.push(event.source.userId, description);
+                }, cntTime);
               } 
                 
             }
-            
             pp.release();
           });
         }

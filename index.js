@@ -434,7 +434,7 @@ function handlePostEvent(event){
       //更新排程通知
       setTimeout(function(){
         ef3.Schedule_Msg(client, event, pool,timeouts);
-      }, 25000);      
+      }, 5000);      
     }
     else if(_data.type == 2){
       // 查看
