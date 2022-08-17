@@ -309,7 +309,7 @@ function Menu3() {
             // 抓取使用者目前事項總共幾筆
             let sum = count_s.results[0].count;
             //清除全部排程，提醒事項已經先刪除，所以需要使用'<='，以確保排成能夠清空
-            for (x = 0 ; x <= sum ; x++) {
+            for (x = 0 ; x < timerid.length ; x++) {
               clearTimeout(timerid[x]); 
             }
 
